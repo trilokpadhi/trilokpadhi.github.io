@@ -2,7 +2,7 @@
 layout: page
 permalink: /publications/
 title: publications
-description: Full list of publications in reverse chronological order. Also on <a href="https://scholar.google.com/citations?hl=en&user=TwY8frYAAAAJ">Google Scholar</a>.
+description: Full list of publications in reverse chronological order. Click any figure to enlarge it.
 nav: true
 nav_order: 2
 ---
