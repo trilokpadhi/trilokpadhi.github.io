@@ -51,6 +51,9 @@ ninja.data = [{
           section: "News",},{id: "news-new-preprint-from-actions-to-understanding-conformal-interpretability-of-temporal-concepts-in-llm-agents-step-wise-conformal-probes-for-early-failure-detection-in-llm-agents-chart-with-upwards-trend",
           title: 'New preprint: From Actions to Understanding: Conformal Interpretability of Temporal Concepts in LLM...',
           description: "",
+          section: "News",},{id: "news-echoes-of-human-malice-in-agents-benchmarking-llms-for-multi-turn-online-harassment-attacks-has-been-accepted-at-icwsm-2027-aaai-international-conference-on-web-and-social-media-tada",
+          title: 'Echoes of Human Malice in Agents: Benchmarking LLMs for Multi-Turn Online Harassment Attacks...',
+          description: "",
           section: "News",},{
         id: 'social-email',
         title: 'email',
