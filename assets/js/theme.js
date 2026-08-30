@@ -206,11 +206,13 @@ let transTheme = () => {
 };
 
 // Determine the expected state of the theme toggle, which can be "dark", "light", or
-// "system". Default is "system".
+// "system". Defaults to "light" so first-time visitors always get the light theme,
+// regardless of their OS preference. The toggle still cycles light/dark/system, and
+// once a visitor picks one it is remembered in localStorage.
 let determineThemeSetting = () => {
   let themeSetting = localStorage.getItem("theme");
   if (themeSetting != "dark" && themeSetting != "light" && themeSetting != "system") {
-    themeSetting = "system";
+    themeSetting = "light";
   }
   return themeSetting;
 };
