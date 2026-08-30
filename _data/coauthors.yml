@@ -1,0 +1,16 @@
+# Links rendered on co-author names in the bibliography.
+# Format:  "lastname":
+#            - firstname: ["Full", "F.", "F. M."]
+#              url: https://...
+
+"kursuncu":
+  - firstname: ["Ugur", "U."]
+    url: https://www.ugurkursuncu.com/
+
+"jha":
+  - firstname: ["Susmit", "S."]
+    url: https://susmitjha.github.io/
+
+"de choudhury":
+  - firstname: ["Munmun", "M."]
+    url: http://www.munmund.net/

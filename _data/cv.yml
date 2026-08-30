@@ -1,0 +1,115 @@
+- title: General Information
+  type: map
+  contents:
+    - name: Full Name
+      value: Trilok Padhi
+    - name: Location
+      value: Atlanta, GA, USA
+    - name: Email
+      value: tpadhi1@student.gsu.edu
+    - name: Research Interests
+      value: Multimodal agents, large vision-language models, knowledge-enhanced and interpretable AI, AI safety, reinforcement learning for reasoning and planning
+
+- title: Education
+  type: time_table
+  contents:
+    - title: PhD in Computer Science
+      institution: Georgia State University, Atlanta, GA
+      year: 2022–now
+      description:
+        - Advisors and mentors:&nbsp;Prof. Ugur Kursuncu, Prof. Yi Ding, Prof. Valerie Shalin, Dr. Yaman Kumar Singla.
+        - Research area:&nbsp;design of multimodal knowledge-enhanced neuro-symbolic models and agents.
+        - Coursework:&nbsp;Large Language Models, Advanced Deep Learning, Advanced Machine Learning, Advanced Human-Computer Interaction.
+    - title: Academic Scholarship
+      institution: Veer Surendra Sai University of Technology, Burla, India
+      year: 2016–2020
+
+- title: Research Experience
+  type: time_table
+  contents:
+    - title: Applied Scientist Intern
+      institution: Siemens GenAI R&D, Seattle, WA
+      year: May–Aug 2023
+      description:
+        - Mentors:&nbsp;Dr. Robert Zhu, Dr. Ivo Santos. Neuro-Symbolic Computing and Intelligence (NuSCI) research group.
+        - Development and evaluation of large-scale multimodal industrial foundation models, focusing on robust pretraining strategies and post-training techniques, aligned with Siemens' Industrial Foundation Models initiative.
+    - title: Research Intern
+      institution: SRI International, Menlo Park, CA
+      year: 2023–2024
+      description:
+        - Mentors:&nbsp;Dr. Susmit Jha, Dr. Anirban Roy, Dr. Ramneet Kaur, Dr. Manoj Acharya. Neuro-Symbolic Computing and Intelligence (NuSCI) research group.
+        - Proposed a new state-of-the-art methodology for uncertainty quantification in large vision-language models using visual grounding, published as <em>Seeing is Believing</em> (arXiv:2505.03788).
+    - title: Research Intern
+      institution: Bosch Research, Bengaluru, India
+      year: Jan–Aug 2020
+      description:
+        - Mentor:&nbsp;Dr. Sahana Prabhu.
+    - title: Research Intern
+      institution: NVIDIA Research, Bengaluru, India
+      year: 2018–2019
+      description:
+        - Mentors:&nbsp;Dr. Christoph Angerer, Mr. Jakob Progsch, Mr. Bharatkumar Sharma, Mr. Jigar Halani.
+
+- title: Industry Experience
+  type: time_table
+  contents:
+    - title: Data Scientist
+      institution: Rakuten Inc., Bengaluru, India
+      year: 2021–2022
+      description:
+        - Supervisors:&nbsp;Mr. Anirban Nandi (Vice President), Mr. Gaurav Ray (Associate Director).
+        - Led projects in the Data Science Consulting department on impact estimation, funnel analysis, and customer acquisition, working with a team of 24 across seven countries.
+        - Developed an LSTM-Attention + DistilBERT churn prediction model with interpretable attention insights, improving retention strategy with an estimated revenue impact of ¥10M annually.
+    - title: Deep Learning Researcher
+      institution: Wowexp Technologies, Bengaluru, India
+      year: 2020–2021
+
+- title: Honors and Awards
+  type: time_table
+  contents:
+    - year: 2025
+      items:
+        - ACL Student Travel Award
+    - year: 2024
+      items:
+        - IEEE BigData Student Travel Award
+    - year: 2018
+      items:
+        - National Champion (1st of 200,000), Smart India Hackathon, Jaipur, India
+    - year: 2016–2020
+      items:
+        - Academic Scholarship, Veer Surendra Sai University of Technology
+
+- title: Technical Skills
+  type: nested_list
+  contents:
+    - title: Programming and Deep Learning
+      items:
+        - Python (PyTorch, NumPy, Pandas, scikit-learn)
+    - title: Multimodal and Vision-Language Models
+      items:
+        - Hugging Face Transformers, OpenCV
+        - CLIP, LLaVA, LLaMA v1/v2/v3, Mistral, GPT-OSS
+        - LLM finetuning, pretraining, and post-training (RLHF, PEFT, DPO, alignment)
+    - title: Knowledge Graphs and Graph Neural Networks
+      items:
+        - PyTorch Geometric, NetworkX, DGL
+    - title: High-Performance Computing
+      items:
+        - MPI, CUDA, Slurm
+
+- title: Academic Interests
+  type: nested_list
+  contents:
+    - title: Multimodal agents and large vision-language models
+      items:
+        - Interpretability and early failure detection in long-horizon agent trajectories.
+        - Calibration and uncertainty quantification grounded in visual evidence.
+    - title: Knowledge-enhanced learning
+      items:
+        - Commonsense and structured knowledge infusion into compact multimodal models.
+        - Neuro-symbolic approaches to multimodal reasoning.
+    - title: AI safety and social computing
+      items:
+        - Red-teaming vision-language models and agents under multi-turn adversarial pressure.
+        - Evaluating LLMs in sensitive domains such as mental health support.
