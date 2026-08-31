@@ -20,7 +20,7 @@
         - Advisors and mentors:&nbsp;Prof. Ugur Kursuncu, Prof. Yi Ding, Prof. Valerie Shalin, Dr. Yaman Kumar Singla.
         - Research area:&nbsp;design of multimodal knowledge-enhanced neuro-symbolic models and agents.
         - Coursework:&nbsp;Large Language Models, Advanced Deep Learning, Advanced Machine Learning, Advanced Human-Computer Interaction.
-    - title: Academic Scholarship
+    - title: Bacherlor of Technology in Electronics and Communication Engineering
       institution: Veer Surendra Sai University of Technology, Burla, India
       year: 2016–2020
 
@@ -29,10 +29,13 @@
   contents:
     - title: Applied Scientist Intern
       institution: Siemens GenAI R&D, Seattle, WA
-      year: May–Aug 2023
+      year: May–Aug 2025, May–Aug 2026
       description:
-        - Mentors:&nbsp;Dr. Robert Zhu, Dr. Ivo Santos. Neuro-Symbolic Computing and Intelligence (NuSCI) research group.
-        - Development and evaluation of large-scale multimodal industrial foundation models, focusing on robust pretraining strategies and post-training techniques, aligned with Siemens' Industrial Foundation Models initiative.
+        - Mentors:&nbsp;Dr. Robert Zhu, Dr. Ivo Santos. Data & AI Research (DAI) team.
+        - 2025:
+          - Development and evaluation of large-scale multimodal industrial foundation models, focusing on robust pretraining strategies and post-training techniques, aligned with Siemens' Industrial Foundation Models initiative.
+        - 2026:
+          - Design and Implementation of a novel self and meta harness pipeline for Synthetic Data Generation and Evaluation for Physical AI Foundation Models, enabling the creation of high-quality synthetic datasets for training and evaluating AI models in industrial applications.
     - title: Research Intern
       institution: SRI International, Menlo Park, CA
       year: 2023–2024
