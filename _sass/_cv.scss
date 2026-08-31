@@ -13,6 +13,15 @@ table.table-cv {
   th {
     padding: 1px;
   }
+
+  // Bootstrap badges are nowrap by default, so a long date range (e.g. two
+  // separate internship summers) overflows the 75px column and collides with
+  // the entry title. Let it wrap instead.
+  .badge {
+    white-space: normal;
+    word-break: break-word;
+    line-height: 1.25;
+  }
 }
 
 a.btncv {
