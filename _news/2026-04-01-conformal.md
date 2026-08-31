@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-New preprint: [From Actions to Understanding: Conformal Interpretability of Temporal Concepts in LLM Agents](https://arxiv.org/abs/2604.19775) — step-wise conformal probes for early failure detection in LLM agents. :chart_with_upwards_trend:
+New preprint: [From Actions to Understanding: Conformal Interpretability of Temporal Concepts in LLM Agents](https://arxiv.org/abs/2604.19775), on step-wise conformal probes for early failure detection in LLM agents. :chart_with_upwards_trend:
