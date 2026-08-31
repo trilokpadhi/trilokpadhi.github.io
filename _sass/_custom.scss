@@ -66,7 +66,7 @@ html[data-theme="dark"] {
 
 @media (min-width: 480px) {
   .profile {
-    width: 27%;
+    width: 24%;
   }
 }
 
@@ -156,20 +156,25 @@ html[data-theme="dark"] {
 }
 
 // -----------------------------------------------------------------------------
-// Two-column intro
+// Intro: wrap the opening prose beside the photo, start the list below it
 // -----------------------------------------------------------------------------
-// The stock layout floats the photo and lets the bio wrap around it, which
-// leaves the text ragged: whichever paragraph or list item straddles the bottom
-// of the photo re-flows to full width mid-block, so bullets end up at two
-// different left edges. Giving the bio its own block formatting context keeps it
-// clear of the float, so photo and bio read as two clean columns.
+// Two failure modes to avoid. Let everything wrap around the floated photo and
+// whichever list item straddles its bottom edge re-flows to full width partway
+// through, so bullets land on two different left edges. Clear the whole bio off
+// the float instead and the column beside the photo goes empty, leaving a large
+// blank block under it.
+//
+// So: let the opening paragraphs wrap (they fill the space beside the photo and
+// re-flow cleanly, having no bullet to misalign against), and clear only the
+// list, which is the one thing that cannot straddle the float without looking
+// broken.
 
-.post > article > .clearfix {
-  display: flow-root;
+.post > article > .clearfix > ul {
+  clear: left;
 }
 
 @media (max-width: 479.98px) {
-  .post > article > .clearfix {
-    display: block;
+  .post > article > .clearfix > ul {
+    clear: none;
   }
 }
