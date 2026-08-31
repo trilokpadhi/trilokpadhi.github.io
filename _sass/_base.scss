@@ -229,6 +229,16 @@ ul.task-list input[type="checkbox"] {
   }
 }
 
+// A list that straddles the bottom edge of the floated profile photo re-flows
+// to full width partway through, so the later lines of an item dedent past its
+// bullet. Giving the list its own block formatting context keeps it clear of
+// the float so every line shares one left edge. Applying this to the items
+// instead would drop their markers, since flow-root overrides display: list-item.
+.post > article > .clearfix > ul,
+.post > article > .clearfix > ol {
+  display: flow-root;
+}
+
 // Below that the profile does stack above the bio, so keep the photo modest
 // and centred instead of letting it fill the column and push the text off-screen.
 @media (max-width: 479.98px) {
