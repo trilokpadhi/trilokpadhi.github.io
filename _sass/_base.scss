@@ -215,7 +215,9 @@ ul.task-list input[type="checkbox"] {
   margin-right: 1rem;
 }
 
-@media (min-width: 576px) {
+// Start wrapping the bio beside the photo earlier than Bootstrap's sm
+// breakpoint - at 576px the text was still being pushed underneath.
+@media (min-width: 480px) {
   .profile {
     width: 30%;
 
@@ -223,6 +225,18 @@ ul.task-list input[type="checkbox"] {
       p {
         display: block;
       }
+    }
+  }
+}
+
+// Below that the profile does stack above the bio, so keep the photo modest
+// and centred instead of letting it fill the column and push the text off-screen.
+@media (max-width: 479.98px) {
+  .profile {
+    text-align: center;
+
+    img {
+      max-width: 200px;
     }
   }
 }
