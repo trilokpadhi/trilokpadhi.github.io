@@ -8,10 +8,6 @@ profile:
   align: left
   image: prof_pic.jpg
   image_circular: true # crops the image to make it circular
-  more_info: >
-    <p>Department of Computer Science</p>
-    <p>Georgia State University</p>
-    <p>Atlanta, GA</p>
 
 news: true # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"

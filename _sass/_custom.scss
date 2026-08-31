@@ -1,0 +1,175 @@
+/*******************************************************************************
+ * Custom refinements layered on top of al-folio.
+ * Imported last in assets/css/main.scss so these win over the theme defaults.
+ * Everything here is presentational - deleting this file restores stock al-folio.
+ ******************************************************************************/
+
+// -----------------------------------------------------------------------------
+// Accent colour
+// -----------------------------------------------------------------------------
+// The stock accent is a near-neon magenta (#b509ac) which reads as loud next to
+// body copy. Swap in a deep indigo for light mode and a softer, desaturated
+// blue for dark mode, so links stay legible against both backgrounds.
+
+:root {
+  --global-theme-color: #2f4b7c;
+  --global-hover-color: #1d3557;
+  --global-divider-color: rgba(0, 0, 0, 0.08);
+}
+
+html[data-theme="dark"] {
+  --global-theme-color: #8fb3d9;
+  --global-hover-color: #b3cde8;
+}
+
+// -----------------------------------------------------------------------------
+// Vertical rhythm
+// -----------------------------------------------------------------------------
+
+.post {
+  .post-header {
+    margin-bottom: 2rem;
+
+    .post-title {
+      letter-spacing: -0.02em;
+    }
+
+    .desc {
+      font-size: 1.05rem;
+      color: var(--global-text-color-light);
+      margin-top: 0.35rem;
+    }
+  }
+
+  article > .clearfix {
+    line-height: 1.7;
+
+    p {
+      margin-bottom: 1.15rem;
+    }
+
+    ul {
+      margin-bottom: 1.25rem;
+
+      li {
+        margin-bottom: 0.6rem;
+      }
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Profile photo
+// -----------------------------------------------------------------------------
+// Slightly narrower than the stock 30% so the bio keeps a comfortable measure,
+// with a hairline ring instead of the heavier default drop shadow.
+
+@media (min-width: 480px) {
+  .profile {
+    width: 27%;
+  }
+}
+
+.profile img {
+  box-shadow: 0 0 0 1px var(--global-divider-color);
+  margin-bottom: 0.5rem;
+}
+
+// -----------------------------------------------------------------------------
+// Section headings ("news", "selected publications")
+// -----------------------------------------------------------------------------
+// Stock headings sit flush against their content with no separation. Give them
+// a hairline rule and looser tracking so the page reads as distinct sections.
+
+.post > article > h2 {
+  margin-top: 3rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--global-divider-color);
+  font-size: 1.4rem;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+}
+
+// -----------------------------------------------------------------------------
+// News table
+// -----------------------------------------------------------------------------
+
+.news {
+  table td {
+    padding-top: 0.45rem;
+    padding-bottom: 0.45rem;
+    line-height: 1.6;
+  }
+
+  .date {
+    color: var(--global-text-color-light);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Publications
+// -----------------------------------------------------------------------------
+
+.publications {
+  ol.bibliography li {
+    margin-bottom: 2rem;
+  }
+
+  .title {
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: 0.2rem;
+  }
+
+  .author,
+  .periodical {
+    line-height: 1.55;
+  }
+
+  // Venue badge: flat and quiet rather than a saturated block of colour.
+  abbr.badge {
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    padding: 0.3rem 0.5rem;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Navbar social icons
+// -----------------------------------------------------------------------------
+// Muted by default, accent on hover, so they sit behind the content rather than
+// competing with it.
+
+.navbar .contact-icon,
+.social .contact-icon {
+  a {
+    color: var(--global-text-color-light);
+    transition: color 0.15s ease-in-out;
+
+    &:hover {
+      color: var(--global-theme-color);
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Two-column intro
+// -----------------------------------------------------------------------------
+// The stock layout floats the photo and lets the bio wrap around it, which
+// leaves the text ragged: whichever paragraph or list item straddles the bottom
+// of the photo re-flows to full width mid-block, so bullets end up at two
+// different left edges. Giving the bio its own block formatting context keeps it
+// clear of the float, so photo and bio read as two clean columns.
+
+.post > article > .clearfix {
+  display: flow-root;
+}
+
+@media (max-width: 479.98px) {
+  .post > article > .clearfix {
+    display: block;
+  }
+}

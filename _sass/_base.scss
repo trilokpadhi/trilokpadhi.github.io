@@ -234,10 +234,7 @@ ul.task-list input[type="checkbox"] {
 // bullet. Giving the list its own block formatting context keeps it clear of
 // the float so every line shares one left edge. Applying this to the items
 // instead would drop their markers, since flow-root overrides display: list-item.
-.post > article > .clearfix > ul,
-.post > article > .clearfix > ol {
-  display: flow-root;
-}
+// (list flow-root rule removed - see _custom.scss)
 
 // Below that the profile does stack above the bio, so keep the photo modest
 // and centred instead of letting it fill the column and push the text off-screen.
