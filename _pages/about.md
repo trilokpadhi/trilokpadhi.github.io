@@ -5,7 +5,7 @@ permalink: /
 subtitle: PhD Student, Computer Science · <a href='https://www.gsu.edu/'>Georgia State University</a>
 
 profile:
-  align: right
+  align: left
   image: prof_pic.jpg
   image_circular: true # crops the image to make it circular
   more_info: >
