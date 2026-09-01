@@ -4,7 +4,13 @@
     <div
       class="table-responsive"
       {% if include.limit and site.announcements.scrollable and news_size > 3 %}
-        style="max-height: 60vw"
+        {%- comment -%}
+          Upstream uses max-height: 60vw here, which sizes a vertical constraint
+          off the viewport *width*, so on any normal desktop window the box is
+          taller than its contents and never scrolls. Constrain it vertically and
+          ask for the scrollbar explicitly.
+        {%- endcomment -%}
+        style="max-height: min(28rem, 70vh); overflow-y: auto"
       {% endif %}
     >
       <table class="table table-sm table-borderless">
