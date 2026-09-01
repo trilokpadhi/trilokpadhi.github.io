@@ -54,8 +54,11 @@ ninja.data = [{
           section: "News",},{id: "news-from-actions-to-understanding-conformal-interpretability-of-temporal-concepts-in-llm-agents-has-been-accepted-at-the-mechanistic-interpretability-workshop-icml-2026-in-seoul-south-korea-tada",
           title: 'From Actions to Understanding: Conformal Interpretability of Temporal Concepts in LLM Agents has...',
           description: "",
-          section: "News",},{id: "news-echoes-of-human-malice-in-agents-benchmarking-llms-for-multi-turn-online-harassment-attacks-has-been-accepted-at-icwsm-2027-aaai-international-conference-on-web-and-social-media-tada",
+          section: "News",},{id: "news-echoes-of-human-malice-in-agents-benchmarking-llms-for-multi-turn-online-harassment-attacks-has-been-accepted-at-icwsm-2027-aaai-international-conference-on-web-and-social-media-see-you-in-edinburgh-scotland-tada",
           title: 'Echoes of Human Malice in Agents: Benchmarking LLMs for Multi-Turn Online Harassment Attacks...',
+          description: "",
+          section: "News",},{id: "news-cross-modal-grounding-for-calibrated-confidence-in-vision-language-models-has-been-accepted-at-emnlp-2026-groundlm-workshop-conference-on-empirical-methods-in-natural-language-processing-see-you-in-budapest-hungary-tada",
+          title: 'Cross-Modal Grounding for Calibrated Confidence in Vision Language Models has been accepted at...',
           description: "",
           section: "News",},{
         id: 'social-email',
