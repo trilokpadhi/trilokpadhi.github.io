@@ -248,8 +248,8 @@ html[data-theme="dark"] {
 }
 
 .affiliation-logo {
-  flex: 0 0 72px;
-  height: 52px;
+  flex: 0 0 104px;
+  height: 74px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -313,7 +313,7 @@ html[data-theme="dark"] {
 
   .affiliation-years {
     flex-basis: 100%;
-    padding-left: calc(72px + 1rem);
+    padding-left: calc(104px + 1rem);
   }
 }
 
@@ -324,15 +324,9 @@ html[data-theme="dark"] {
 // is feedback rather than effects: nothing moves more than a couple of pixels
 // and nothing animates on load.
 
-// The seven logos fight each other at full saturation (Siemens teal against
-// NVIDIA green against two different reds). Desaturate them so the column reads
-// as one block, and give back the colour on hover.
+// Logos in their own colours.
 .affiliation-logo img {
-  filter: grayscale(1);
-  opacity: 0.8;
-  transition:
-    filter 0.2s ease,
-    opacity 0.2s ease;
+  transition: opacity 0.2s ease;
 }
 
 .affiliation {
@@ -341,11 +335,6 @@ html[data-theme="dark"] {
 
   &:hover {
     background-color: rgba(127, 127, 127, 0.06);
-
-    .affiliation-logo img {
-      filter: grayscale(0);
-      opacity: 1;
-    }
   }
 }
 
@@ -623,53 +612,17 @@ a {
 // -----------------------------------------------------------------------------
 // Navbar
 // -----------------------------------------------------------------------------
-// Stock al-folio gives the navbar the page background, so it reads as empty
-// space with links floating in it. The reference sites both anchor the page
-// with a solid coloured bar carrying the name. Same idea here, in the site
-// accent rather than their green.
+// Left on the page background rather than the accent. The name is shown on every
+// page (see _includes/header.liquid), which is what the bar actually needed;
+// the colour was a separate idea and is not wanted.
+//
+// With the banner pulled up against it, keep the hairline so the white bar and
+// the photograph do not run together.
 
 #navbar.navbar {
-  background-color: var(--global-theme-color);
-  border-bottom: none;
-  opacity: 1;
-
-  .navbar-brand,
-  .navbar-brand .title,
-  .nav-item .nav-link,
-  .navbar-nav .nav-link,
-  #light-toggle,
-  .contact-icon a {
-    color: rgba(255, 255, 255, 0.85);
-  }
-
-  .navbar-brand {
-    color: #fff;
-    font-size: 1.1rem;
-  }
-
-  .nav-item .nav-link:hover,
-  .navbar-nav .nav-link:hover,
-  #light-toggle:hover {
-    color: #fff;
-  }
-
-  .nav-item.active .nav-link,
-  .navbar-nav .nav-link.active {
-    color: #fff;
-    font-weight: 600;
-  }
-
-  // The keyboard-shortcut hint and search glyph sit on the bar too.
-  .navbar-nav .nav-item kbd,
-  #search-toggle {
-    color: rgba(255, 255, 255, 0.85);
-  }
-
-  // Hamburger bars on small screens.
-  .navbar-toggler .icon-bar {
-    background-color: rgba(255, 255, 255, 0.9);
-  }
+  border-bottom: 1px solid var(--global-divider-color);
 }
+
 
 // -----------------------------------------------------------------------------
 // Section headings
@@ -713,10 +666,4 @@ html[data-theme="dark"] .callout {
 // than floating below a band of white, as it does on the reference sites.
 .page-banner {
   margin-top: -3rem;
-}
-
-// In dark mode the accent is a pale blue, which would leave white navbar text
-// nearly unreadable. Give the bar a dark surface there instead.
-html[data-theme="dark"] #navbar.navbar {
-  background-color: #1b2a41;
 }
