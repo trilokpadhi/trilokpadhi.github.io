@@ -188,39 +188,39 @@ html[data-theme="dark"] {
 // Research interests
 // -----------------------------------------------------------------------------
 
-// Six flat bullets read as an undifferentiated wall. A two-column card grid
-// gives each area its own block, so the set can be scanned rather than read.
+// Research interests: a plain two-column list of topic names, as on the
+// reference bio. Cards with a sentence of detail each turned six short labels
+// into a block of prose competing with the paragraphs around it.
 
 .research-areas {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.85rem;
-  margin-bottom: 1rem;
-  clear: left;
-}
+  list-style: none;
+  padding-left: 0;
+  margin: 0 0 1.5rem;
+  columns: 2;
+  column-gap: 2rem;
 
-.research-area {
-  border: 1px solid var(--global-divider-color);
-  border-radius: 8px;
-  padding: 0.9rem 1rem;
-  border-top: 2px solid var(--global-theme-color);
-}
+  li {
+    break-inside: avoid;
+    padding-left: 1rem;
+    margin-bottom: 0.45rem;
+    position: relative;
+  }
 
-.research-area-title {
-  font-weight: 600;
-  line-height: 1.35;
-  margin-bottom: 0.3rem;
-}
-
-.research-area-detail {
-  font-size: 0.9rem;
-  line-height: 1.55;
-  color: var(--global-text-color-light);
+  li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.62em;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: var(--global-theme-color);
+  }
 }
 
 @media (max-width: 575.98px) {
   .research-areas {
-    grid-template-columns: minmax(0, 1fr);
+    columns: 1;
   }
 }
 
@@ -324,19 +324,6 @@ html[data-theme="dark"] {
 // is feedback rather than effects: nothing moves more than a couple of pixels
 // and nothing animates on load.
 
-// Research cards lift slightly under the cursor.
-.research-area {
-  transition:
-    transform 0.18s ease,
-    box-shadow 0.18s ease,
-    border-color 0.18s ease;
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: rgba(0, 0, 0, 0.07) 0px 4px 14px;
-  }
-}
-
 // The seven logos fight each other at full saturation (Siemens teal against
 // NVIDIA green against two different reds). Desaturate them so the column reads
 // as one block, and give back the colour on hover.
@@ -387,7 +374,6 @@ a {
 
 // Respect a reduced-motion preference: keep the colour feedback, drop the movement.
 @media (prefers-reduced-motion: reduce) {
-  .research-area,
   .affiliation,
   .news table tr,
   .publications ol.bibliography li .preview,
@@ -395,7 +381,6 @@ a {
     transition: none;
   }
 
-  .research-area:hover,
   .publications ol.bibliography li:hover .preview {
     transform: none;
   }
@@ -573,13 +558,6 @@ a {
   }
 }
 
-// The heading rule and the top edge of the first card were both fighting for
-// attention. Let the heading carry the structure and keep the cards quiet.
-.research-area {
-  border-top-width: 1px;
-  border-top-color: var(--global-divider-color);
-  border-left: 2px solid var(--global-theme-color);
-}
 
 // -----------------------------------------------------------------------------
 // Sidebar identity block

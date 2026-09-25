@@ -1,24 +1,9 @@
-# Research interest cards shown on the homepage.
-# Rendered by _includes/research_areas.liquid.
-#
-# Keep the details grammatically parallel: each is a plain list of topics, not a
-# sentence. Mixing noun lists with gerund phrases is what made these read as an
-# assortment rather than a set.
+# Research interests shown on the homepage as a plain list of topic names,
+# matching the reference bio's format. Rendered by _includes/research_areas.liquid.
 
-- title: Reasoning
-  detail: Reinforcement learning for reasoning, test-time compute, process reward models.
-
-- title: Interpretability and uncertainty
-  detail: Probing internal states, calibration, conformal prediction, early failure detection.
-
-- title: Agents
-  detail: Multi-agent systems, agent harnesses, self-improving agents.
-
-- title: World and action models
-  detail: Vision-language-action models, embodied agents, planning over learned world models.
-
-- title: Knowledge and grounding
-  detail: Knowledge graphs, retrieval, knowledge-infused training for compact models.
-
-- title: Safety and social impact
-  detail: Red-teaming, toxicity and harassment, LLMs in mental health settings.
+- Neuro-Symbolic and Knowledge-Infused AI
+- Interpretability and Uncertainty Quantification
+- LLM Agents and Multi-Agent Systems
+- Vision-Language and Action Models
+- Knowledge Graphs, Retrieval, and Grounding
+- AI Safety and Social Impact
