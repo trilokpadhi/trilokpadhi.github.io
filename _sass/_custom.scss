@@ -501,11 +501,13 @@ a {
 
   img {
     width: 100%;
-    // Matched to the banner's own 3.6:1 crop so `cover` has almost nothing to
-    // trim; biased slightly above centre so faces survive if it ever does.
-    height: clamp(150px, 28vw, 360px);
+    // On a wide window the box is proportionally flatter than the image's own
+    // 3.6:1 crop, so `cover` has to trim vertically. Anchor near the top: the
+    // only thing worth losing in a group photo is the empty floor at the
+    // bottom, never anyone's head.
+    height: clamp(150px, 26vw, 330px);
     object-fit: cover;
-    object-position: center 40%;
+    object-position: center 12%;
     display: block;
   }
 }
