@@ -32,16 +32,7 @@ I am always happy to talk about multimodal reasoning, agent interpretability, an
 
 ## research interests
 
-<div class="research-areas" markdown="1">
-
-- **Reasoning.** Reinforcement learning for reasoning, test-time compute, and process reward models.
-- **Interpretability, uncertainty, and calibration.** Reading a model's internal state to catch failure early, and making stated confidence track the evidence.
-- **Agents.** Multi-agent systems, agent harnesses, and agents that improve from their own failures.
-- **World and action models.** Vision-language-action models and embodied agents that plan over what they expect the world to do.
-- **Knowledge, retrieval, and grounding.** Knowledge graphs and retrieval as a way to anchor generation in something checkable.
-- **Safety and social impact.** Red-teaming multimodal models and agents, and studying how they behave in sensitive settings.
-
-</div>
+{% include research_areas.liquid %}
 
 ## education
 

@@ -1,0 +1,20 @@
+# Research interest cards shown on the homepage.
+# Rendered by _includes/research_areas.liquid.
+
+- title: Reasoning
+  detail: Reinforcement learning for reasoning, test-time compute, and process reward models.
+
+- title: Interpretability and calibration
+  detail: Reading a model's internal state to catch failure early, and keeping stated confidence in step with the evidence.
+
+- title: Agents
+  detail: Multi-agent systems, agent harnesses, and agents that improve from their own failures.
+
+- title: World and action models
+  detail: Vision-language-action models and embodied agents that plan over what they expect the world to do.
+
+- title: Knowledge and grounding
+  detail: Knowledge graphs and retrieval as a way to anchor generation in something checkable.
+
+- title: Safety and social impact
+  detail: Red-teaming multimodal models and agents, and studying how they behave in sensitive settings.

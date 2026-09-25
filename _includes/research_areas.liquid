@@ -1,0 +1,12 @@
+{% comment %}
+  Research interest cards. Data lives in _data/research.yml.
+{% endcomment %}
+
+<div class="research-areas">
+  {% for area in site.data.research %}
+    <div class="research-area">
+      <div class="research-area-title">{{ area.title }}</div>
+      <div class="research-area-detail">{{ area.detail }}</div>
+    </div>
+  {% endfor %}
+</div>
