@@ -28,13 +28,15 @@ latest_posts:
   limit: 3
 ---
 
-<p class="lead-statement">Building multimodal models and agents that can be trusted to act, and to say when they cannot.</p>
+<p class="lead-statement">I work on interpretability, uncertainty, and safety for multimodal models and agents.</p>
 
 I am a fifth-year PhD student in Computer Science at [Georgia State University](https://www.gsu.edu/), advised by [Prof. Ugur Kursuncu](https://www.ugurkursuncu.com/) in the [SWAN AI Research Group](https://www.ugurkursuncu.com/SWAN-AI/).
 
-A vision-language model will describe an image and take actions in the world, yet report confidence its own evidence does not support, and abandon a long task halfway through without ever signaling that it has. My work attacks that gap from three sides: **reasoning and interpretability** methods that expose what a model is doing at each step, **knowledge-grounded training** that lets models under 1B parameters hold their own against far larger ones, and **red-teaming** that reveals how both break under realistic, multi-turn pressure.
+Vision-language models and the agents built on them are now good enough to act, and still bad at reporting when they are wrong. I study three parts of that problem: reading a model's internal state to detect failure before a task ends, calibrating stated confidence against evidence the model can actually point to, and red-teaming both under multi-turn adversarial pressure. A second thread asks how much of this can be done with small models, by infusing commonsense and structured knowledge rather than scaling parameters.
 
-I am always happy to talk about multimodal reasoning, agent interpretability, and AI safety, and I actively collaborate with researchers and students. Reach me at [tpadhi1@student.gsu.edu](mailto:tpadhi1@student.gsu.edu).
+During my PhD I have interned at Siemens, SRI International, Bosch, and NVIDIA. Before it I was a data scientist at Rakuten.
+
+I am glad to hear from anyone working on related problems, and I collaborate with students and researchers outside my group. The best way to reach me is [email](mailto:tpadhi1@student.gsu.edu).
 
 ## research interests
 
