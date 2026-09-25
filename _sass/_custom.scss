@@ -529,13 +529,13 @@ a {
 
 .about-layout {
   display: grid;
-  grid-template-columns: minmax(0, 230px) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 255px) minmax(0, 1fr);
   gap: 2rem;
   align-items: start;
 }
 
 .about-layout-right {
-  grid-template-columns: minmax(0, 1fr) minmax(0, 230px);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 255px);
 
   .profile {
     order: 2;
@@ -577,4 +577,65 @@ a {
   border-top-width: 1px;
   border-top-color: var(--global-divider-color);
   border-left: 2px solid var(--global-theme-color);
+}
+
+// -----------------------------------------------------------------------------
+// Sidebar identity block
+// -----------------------------------------------------------------------------
+// On patrick-manser.com and robertavaltorta.com the name, role and links all
+// live in the sidebar under a photo that overlaps the banner, rather than in a
+// full-width header below it. That is what ties the banner to the page instead
+// of leaving it as a strip sitting on top.
+
+.page-banner {
+  margin-bottom: 0;
+}
+
+.about-layout {
+  padding-top: 1.5rem;
+}
+
+.about-layout .profile {
+  // Lift the photo so it straddles the banner's bottom edge.
+  margin-top: -5.5rem;
+
+  img {
+    border: 4px solid var(--global-bg-color);
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 10px;
+  }
+}
+
+.sidebar-name {
+  font-size: 1.6rem;
+  line-height: 1.2;
+  margin: 0.85rem 0 0.2rem;
+  letter-spacing: -0.02em;
+}
+
+.sidebar-role {
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--global-text-color-light);
+  margin-bottom: 0;
+}
+
+.about-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 1.25rem;
+}
+
+@media (max-width: 767.98px) {
+  .about-layout {
+    padding-top: 1rem;
+  }
+
+  .about-layout .profile {
+    margin-top: -3.5rem;
+  }
+
+  .about-heading {
+    font-size: 1.7rem;
+  }
 }

@@ -17,17 +17,6 @@ layout: default
 {% endif %}
 
 <div class="post">
-  <header class="post-header">
-    <h1 class="post-title">
-      {% if site.title == 'blank' %}
-        <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
-        {{ site.last_name }}
-      {% else %}
-        {{ site.title }}
-      {% endif %}
-    </h1>
-    <p class="desc">{{ page.subtitle }}</p>
-  </header>
 
   <div class="about-layout about-layout-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
     {% if page.profile %}
@@ -47,6 +36,17 @@ layout: default
             cache_bust=true
           %}
         {% endif %}
+        <h1 class="sidebar-name">
+          {% if site.title == 'blank' %}
+            <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
+            {{ site.last_name }}
+          {% else %}
+            {{ site.title }}
+          {% endif %}
+        </h1>
+        {% if page.subtitle %}
+          <p class="sidebar-role">{{ page.subtitle }}</p>
+        {% endif %}
         {% if page.profile.more_info %}
           <div class="more-info">{{ page.profile.more_info }}</div>
         {% endif %}
@@ -57,6 +57,7 @@ layout: default
     {% endif %}
 
     <article class="about-main">
+    {% if page.main_heading %}<h1 class="about-heading">{{ page.main_heading }}</h1>{% endif %}
     <div class="clearfix">{{ content }}</div>
 
     <!-- News -->

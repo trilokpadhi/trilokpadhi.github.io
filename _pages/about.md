@@ -3,6 +3,7 @@ layout: about
 title: about
 permalink: /
 banner: banner.jpg
+main_heading: about
 banner_alt: SWAN AI Research Group and collaborators at USC Viterbi
 subtitle: PhD Student, Computer Science · <a href='https://www.gsu.edu/'>Georgia State University</a>
 
