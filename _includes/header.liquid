@@ -2,7 +2,12 @@
   <!-- Nav Bar -->
   <nav id="navbar" class="navbar navbar-light navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}" role="navigation">
     <div class="container">
-      {% if page.permalink != '/' %}
+      {% comment %}
+        Stock al-folio hides the brand on the home page, on the assumption that a
+        large name header sits directly below it. This site puts the name in the
+        sidebar instead, so the bar would otherwise start empty: always show it.
+      {% endcomment %}
+      {% if true %}
         <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl }}/">
           {% if site.title == 'blank' %}
             {% if site.first_name %}

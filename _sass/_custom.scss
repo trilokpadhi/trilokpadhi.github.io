@@ -639,3 +639,104 @@ a {
     font-size: 1.7rem;
   }
 }
+
+// -----------------------------------------------------------------------------
+// Navbar
+// -----------------------------------------------------------------------------
+// Stock al-folio gives the navbar the page background, so it reads as empty
+// space with links floating in it. The reference sites both anchor the page
+// with a solid coloured bar carrying the name. Same idea here, in the site
+// accent rather than their green.
+
+#navbar.navbar {
+  background-color: var(--global-theme-color);
+  border-bottom: none;
+  opacity: 1;
+
+  .navbar-brand,
+  .navbar-brand .title,
+  .nav-item .nav-link,
+  .navbar-nav .nav-link,
+  #light-toggle,
+  .contact-icon a {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .navbar-brand {
+    color: #fff;
+    font-size: 1.1rem;
+  }
+
+  .nav-item .nav-link:hover,
+  .navbar-nav .nav-link:hover,
+  #light-toggle:hover {
+    color: #fff;
+  }
+
+  .nav-item.active .nav-link,
+  .navbar-nav .nav-link.active {
+    color: #fff;
+    font-weight: 600;
+  }
+
+  // The keyboard-shortcut hint and search glyph sit on the bar too.
+  .navbar-nav .nav-item kbd,
+  #search-toggle {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  // Hamburger bars on small screens.
+  .navbar-toggler .icon-bar {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Section headings
+// -----------------------------------------------------------------------------
+// Theirs are large and bold enough to structure the page at a glance; 1.4rem at
+// weight 500 was closer to body copy than to a heading.
+
+.post .about-main > h2,
+.post .about-main > .clearfix > h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-top: 3rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.45rem;
+}
+
+// -----------------------------------------------------------------------------
+// Callout
+// -----------------------------------------------------------------------------
+// For a statement worth pulling out of the flow, as their mission/award boxes
+// do. Use in markdown as <div class="callout" markdown="1"> ... </div>
+
+.callout {
+  background-color: rgba(47, 75, 124, 0.06);
+  border-left: 3px solid var(--global-theme-color);
+  border-radius: 0 6px 6px 0;
+  padding: 0.9rem 1.1rem;
+  margin: 1.5rem 0;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+html[data-theme="dark"] .callout {
+  background-color: rgba(143, 179, 217, 0.1);
+}
+
+// Cancel the container's mt-5 so the banner butts against the navbar rather
+// than floating below a band of white, as it does on the reference sites.
+.page-banner {
+  margin-top: -3rem;
+}
+
+// In dark mode the accent is a pale blue, which would leave white navbar text
+// nearly unreadable. Give the bar a dark surface there instead.
+html[data-theme="dark"] #navbar.navbar {
+  background-color: #1b2a41;
+}
