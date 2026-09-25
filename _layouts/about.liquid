@@ -29,9 +29,9 @@ layout: default
     <p class="desc">{{ page.subtitle }}</p>
   </header>
 
-  <article>
+  <div class="about-layout about-layout-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
     {% if page.profile %}
-      <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
+      <aside class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
         {% if page.profile.image %}
           {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
           {% if page.profile.image_circular %}
@@ -53,9 +53,10 @@ layout: default
         {% if page.profile.links %}
           {% include profile_links.liquid %}
         {% endif %}
-      </div>
+      </aside>
     {% endif %}
 
+    <article class="about-main">
     <div class="clearfix">{{ content }}</div>
 
     <!-- News -->
@@ -94,5 +95,6 @@ layout: default
     {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}
       {% include newsletter.liquid center=true %}
     {% endif %}
-  </article>
+    </article>
+  </div>
 </div>
