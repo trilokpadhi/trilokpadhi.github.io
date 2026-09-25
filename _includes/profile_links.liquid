@@ -1,0 +1,58 @@
+{% comment %}
+  Labelled profile links for the homepage sidebar. The navbar already carries
+  icon-only versions of these; here they get names, which is what makes the
+  column readable rather than a row of glyphs to decode.
+  Values come from _data/socials.yml so there is a single source of truth.
+{% endcomment %}
+
+{% assign s = site.data.socials %}
+
+<ul class="profile-links">
+  {% if s.email %}
+    <li>
+      <a href="mailto:{{ s.email | encode_email }}">
+        <i class="fa-solid fa-envelope fa-fw"></i><span>Email</span>
+      </a>
+    </li>
+  {% endif %}
+  {% if s.scholar_userid %}
+    <li>
+      <a href="https://scholar.google.com/citations?user={{ s.scholar_userid }}" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar fa-fw"></i><span>Google Scholar</span>
+      </a>
+    </li>
+  {% endif %}
+  {% if s.github_username %}
+    <li>
+      <a href="https://github.com/{{ s.github_username }}" target="_blank" rel="noopener">
+        <i class="fa-brands fa-github fa-fw"></i><span>GitHub</span>
+      </a>
+    </li>
+  {% endif %}
+  {% if s.linkedin_username %}
+    <li>
+      <a href="https://www.linkedin.com/in/{{ s.linkedin_username }}" target="_blank" rel="noopener">
+        <i class="fa-brands fa-linkedin fa-fw"></i><span>LinkedIn</span>
+      </a>
+    </li>
+  {% endif %}
+  {% if s.x_username %}
+    <li>
+      <a href="https://twitter.com/{{ s.x_username }}" target="_blank" rel="noopener">
+        <i class="fa-brands fa-x-twitter fa-fw"></i><span>X</span>
+      </a>
+    </li>
+  {% endif %}
+  {% if s.research_gate_profile %}
+    <li>
+      <a href="https://www.researchgate.net/profile/{{ s.research_gate_profile }}" target="_blank" rel="noopener">
+        <i class="ai ai-researchgate fa-fw"></i><span>ResearchGate</span>
+      </a>
+    </li>
+  {% endif %}
+  <li>
+    <a href="{{ '/cv/' | relative_url }}">
+      <i class="fa-solid fa-file-lines fa-fw"></i><span>Curriculum vitae</span>
+    </a>
+  </li>
+</ul>

@@ -1,6 +1,21 @@
 ---
 layout: default
 ---
+{% if page.banner %}
+  {% comment %}
+    Optional full-bleed hero image, the way robertavaltorta.com and
+    patrick-manser.com open their pages. Set `banner: <filename>` in the page
+    front matter and drop the file in assets/img/. Omit it and nothing renders.
+  {% endcomment %}
+  <div class="page-banner">
+    <img
+      src="{{ '/assets/img/' | append: page.banner | relative_url }}"
+      alt="{{ page.banner_alt | default: '' }}"
+      loading="eager"
+    >
+  </div>
+{% endif %}
+
 <div class="post">
   <header class="post-header">
     <h1 class="post-title">
@@ -34,6 +49,9 @@ layout: default
         {% endif %}
         {% if page.profile.more_info %}
           <div class="more-info">{{ page.profile.more_info }}</div>
+        {% endif %}
+        {% if page.profile.links %}
+          {% include profile_links.liquid %}
         {% endif %}
       </div>
     {% endif %}

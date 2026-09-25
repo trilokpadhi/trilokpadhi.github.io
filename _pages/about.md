@@ -2,16 +2,18 @@
 layout: about
 title: about
 permalink: /
+# banner: banner.jpg  # drop a file in assets/img/ and uncomment to show a hero image
 subtitle: PhD Student, Computer Science · <a href='https://www.gsu.edu/'>Georgia State University</a>
 
 profile:
   align: left
   image: prof_pic.jpg
   image_circular: true # crops the image to make it circular
+  links: true # labelled profile links under the photo (see _includes/profile_links.liquid)
 
 news: true # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
+social: false # the sidebar carries labelled links instead of a bottom icon row
 
 announcements:
   enabled: true # includes a list of news items
@@ -24,11 +26,13 @@ latest_posts:
   limit: 3
 ---
 
+<p class="lead-statement">Building multimodal models and agents that can be trusted to act, and to say when they cannot.</p>
+
 I am a fifth-year PhD student in Computer Science at [Georgia State University](https://www.gsu.edu/), advised by [Prof. Ugur Kursuncu](https://www.ugurkursuncu.com/) in the [SWAN AI Research Group](https://www.ugurkursuncu.com/SWAN-AI/).
 
-My research builds multimodal models and agents that can be trusted to act, and to say when they cannot. A vision-language model will describe an image and take actions in the world, yet report confidence its own evidence does not support, and abandon a long task halfway through without ever signaling that it has. I work on reasoning and interpretability methods that expose what a model is doing at each step, on knowledge-grounded training that lets small models hold their own against far larger ones, and on red-teaming that reveals how both break under realistic pressure.
+A vision-language model will describe an image and take actions in the world, yet report confidence its own evidence does not support, and abandon a long task halfway through without ever signaling that it has. My work attacks that gap from three sides: **reasoning and interpretability** methods that expose what a model is doing at each step, **knowledge-grounded training** that lets models under 1B parameters hold their own against far larger ones, and **red-teaming** that reveals how both break under realistic, multi-turn pressure.
 
-I am always happy to talk about multimodal reasoning, agent interpretability, and AI safety, and I actively collaborate with researchers and students. Reach me at [tpadhi1@student.gsu.edu](mailto:tpadhi1@student.gsu.edu) or on [LinkedIn](https://www.linkedin.com/in/trilok-padhi-bb809b147/).
+I am always happy to talk about multimodal reasoning, agent interpretability, and AI safety, and I actively collaborate with researchers and students. Reach me at [tpadhi1@student.gsu.edu](mailto:tpadhi1@student.gsu.edu).
 
 ## research interests
 
