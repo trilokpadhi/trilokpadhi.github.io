@@ -178,3 +178,128 @@ html[data-theme="dark"] {
     clear: none;
   }
 }
+
+// -----------------------------------------------------------------------------
+// Homepage section headings written in markdown (## research interests, etc.)
+// -----------------------------------------------------------------------------
+// These live inside .clearfix rather than as direct children of <article>, so
+// they need the same treatment the layout's own h2s get.
+
+.post > article > .clearfix > h2 {
+  margin-top: 2.75rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--global-divider-color);
+  font-size: 1.4rem;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  clear: left;
+}
+
+// -----------------------------------------------------------------------------
+// Research interests
+// -----------------------------------------------------------------------------
+
+.research-areas ul {
+  list-style: none;
+  padding-left: 0;
+
+  li {
+    padding-left: 1rem;
+    border-left: 2px solid var(--global-divider-color);
+    margin-bottom: 0.85rem;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Education / experience rows
+// -----------------------------------------------------------------------------
+// Logo, then role + organisation, then the years pinned right. The logo sits on
+// a white chip so the marks (which are all dark-on-transparent) stay legible in
+// dark mode as well as light.
+
+.affiliations {
+  margin-bottom: 1rem;
+}
+
+.affiliation {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--global-divider-color);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.affiliation-logo {
+  flex: 0 0 72px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 6px;
+  padding: 6px;
+
+  // Definite width/height rather than max-*: several of these logos ship with
+  // only a viewBox and no intrinsic dimensions, and such an SVG collapses to
+  // zero inside a flex item when it is only given maximums.
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.affiliation-body {
+  flex: 1 1 auto;
+  min-width: 0;
+  line-height: 1.45;
+}
+
+.affiliation-role {
+  font-weight: 600;
+}
+
+.affiliation-org {
+  font-size: 0.95rem;
+
+  .affiliation-location::before {
+    content: " · ";
+    color: var(--global-text-color-light);
+  }
+
+  .affiliation-location {
+    color: var(--global-text-color-light);
+  }
+}
+
+.affiliation-detail {
+  font-size: 0.9rem;
+  color: var(--global-text-color-light);
+  margin-top: 0.15rem;
+}
+
+.affiliation-years {
+  flex: 0 0 auto;
+  font-size: 0.875rem;
+  color: var(--global-text-color-light);
+  white-space: nowrap;
+  padding-top: 0.15rem;
+}
+
+// Stack on phones: the years move under the text rather than squeezing it.
+@media (max-width: 575.98px) {
+  .affiliation {
+    flex-wrap: wrap;
+  }
+
+  .affiliation-years {
+    flex-basis: 100%;
+    padding-left: calc(72px + 1rem);
+  }
+}

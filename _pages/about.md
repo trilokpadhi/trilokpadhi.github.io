@@ -24,11 +24,29 @@ latest_posts:
   limit: 3
 ---
 
-I am a fifth-year PhD student in Computer Science at [Georgia State University](https://www.gsu.edu/), advised by [Prof. Ugur Kursuncu](https://www.ugurkursuncu.com/) in the [SWAN AI Research Group](https://www.ugurkursuncu.com/SWAN-AI/). My research focuses on making multimodal models and agents safer in real-world settings by improving their **grounding, interpretability, and trustworthiness**. Large vision-language models can describe images and act in the world, but they can still be confidently wrong in unpredictable ways and may fail midway through long-horizon tasks. My work on multimodal models and agents runs along three broad directions:
+I am a fifth-year PhD student in Computer Science at [Georgia State University](https://www.gsu.edu/), advised by [Prof. Ugur Kursuncu](https://www.ugurkursuncu.com/) in the [SWAN AI Research Group](https://www.ugurkursuncu.com/SWAN-AI/).
 
-- **Reliability.** These systems fail quietly. They give confident answers the evidence does not support, and they drift partway through a long task without signaling it. I work on reading an agent's internal state to catch failure before a trajectory ends, and on tying stated confidence to evidence that can actually be checked.
-- **Knowledge.** Much of what a model needs in order to reason is stated in neither the image nor the text. I infuse commonsense and structured knowledge into compact vision-language models (under 1B parameters), so small models reach the accuracy of far larger ones while staying easier to inspect and steer.
-- **Safety.** Models behave differently under pressure than they do on benchmarks. I red-team vision-language models and agents against realistic, multi-turn adversarial behavior, including harassment, toxicity, and manipulation, and study how they hold up in sensitive settings such as mental health support.
+My research builds multimodal models and agents that can be trusted to act, and to say when they cannot. A vision-language model will describe an image and take actions in the world, yet report confidence its own evidence does not support, and abandon a long task halfway through without ever signaling that it has. I work on reasoning and interpretability methods that expose what a model is doing at each step, on knowledge-grounded training that lets small models hold their own against far larger ones, and on red-teaming that reveals how both break under realistic pressure.
 
-During my PhD, I was fortunate enough to contribute to creating high-quality synthetic data and pretraining for Physical AI Initiatives as a 2x Applied Scientist intern at **Data & AI Team, Siemens GenAI R&D** in Seattle. I also worked as a Research Intern at **SRI International** (formerly the Stanford Research Institute) in Menlo Park with the Neuro-Symbolic Computing and Intelligence group funded by ARPA-H to design UQ methods for health. Before starting my PhD, I worked as a Data Science Researcher at **Rakuten AI Labs** in Bengaluru. I have also held research internships at **Bosch Research** and **NVIDIA Research**. I am always happy to discuss multimodal reasoning, agent interpretability, and AI safety; feel free to [get in touch](mailto:tpadhi1@student.gsu.edu). I actively collaborate with researchers and students. If you are interested in working together, please reach out via email at [tpadhi1@student.gsu.edu](mailto:tpadhi1@student.gsu.edu) or on [LinkedIn](https://www.linkedin.com/in/trilok-padhi-bb809b147/).
+I am always happy to talk about multimodal reasoning, agent interpretability, and AI safety, and I actively collaborate with researchers and students. Reach me at [tpadhi1@student.gsu.edu](mailto:tpadhi1@student.gsu.edu) or on [LinkedIn](https://www.linkedin.com/in/trilok-padhi-bb809b147/).
 
+## research interests
+
+<div class="research-areas" markdown="1">
+
+- **Reasoning.** Reinforcement learning for reasoning, test-time compute, and process reward models.
+- **Interpretability, uncertainty, and calibration.** Reading a model's internal state to catch failure early, and making stated confidence track the evidence.
+- **Agents.** Multi-agent systems, agent harnesses, and agents that improve from their own failures.
+- **World and action models.** Vision-language-action models and embodied agents that plan over what they expect the world to do.
+- **Knowledge, retrieval, and grounding.** Knowledge graphs and retrieval as a way to anchor generation in something checkable.
+- **Safety and social impact.** Red-teaming multimodal models and agents, and studying how they behave in sensitive settings.
+
+</div>
+
+## education
+
+{% include affiliations.liquid list="education" %}
+
+## experience
+
+{% include affiliations.liquid list="experience" %}

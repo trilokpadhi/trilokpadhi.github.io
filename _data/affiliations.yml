@@ -1,0 +1,60 @@
+# Education and experience rows shown on the homepage.
+# Rendered by _includes/affiliations.liquid. Logos live in assets/img/logos/.
+
+education:
+  - org: Georgia State University
+    url: https://www.gsu.edu/
+    logo: gsu.svg
+    role: PhD in Computer Science
+    detail: Advised by <a href="https://www.ugurkursuncu.com/">Prof. Ugur Kursuncu</a> in the <a href="https://www.ugurkursuncu.com/SWAN-AI/">SWAN AI Research Group</a>
+    years: 2022 – present
+    location: Atlanta, GA
+
+  - org: Veer Surendra Sai University of Technology
+    url: https://www.vssut.ac.in/
+    logo: vssut.png
+    role: B.Tech. in Electronics and Communication Engineering
+    detail: Academic Scholarship
+    years: 2016 – 2020
+    location: Burla, India
+
+experience:
+  - org: Siemens
+    url: https://www.siemens.com/
+    logo: siemens.svg
+    role: Applied Scientist Intern, Data &amp; AI Research
+    detail: Synthetic data generation and evaluation for Physical AI foundation models; pretraining and post-training of multimodal industrial foundation models
+    years: Summers 2025 &amp; 2026
+    location: Seattle, WA
+
+  - org: SRI International
+    url: https://www.sri.com/
+    logo: sri.svg
+    role: Research Intern, Neuro-Symbolic Computing and Intelligence
+    detail: Uncertainty quantification for multimodal LLMs using visual grounding, on an ARPA-H funded project
+    years: Summer 2024
+    location: Menlo Park, CA
+
+  - org: Rakuten
+    url: https://global.rakuten.com/corp/
+    logo: rakuten.svg
+    role: Data Scientist
+    detail: Churn prediction and customer acquisition modelling for the Data Science Consulting group
+    years: 2021 – 2022
+    location: Bengaluru, India
+
+  - org: Bosch Research
+    url: https://www.bosch.com/research/
+    logo: bosch.svg
+    role: Research Intern
+    detail: Deep learning research
+    years: 2020
+    location: Bengaluru, India
+
+  - org: NVIDIA
+    url: https://www.nvidia.com/
+    logo: nvidia.svg
+    role: Research Intern
+    detail: GPU-accelerated computing and deep learning
+    years: 2018 – 2019
+    location: Bengaluru, India

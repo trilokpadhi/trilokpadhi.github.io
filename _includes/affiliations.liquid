@@ -1,0 +1,38 @@
+{% comment %}
+  Renders a list of education or experience rows with the organisation's logo.
+  Usage: {% include affiliations.liquid list="experience" %}
+  Data lives in _data/affiliations.yml.
+{% endcomment %}
+
+{% assign rows = site.data.affiliations[include.list] %}
+
+<div class="affiliations">
+  {% for row in rows %}
+    <div class="affiliation">
+      <div class="affiliation-logo">
+        {% if row.url %}<a href="{{ row.url }}" target="_blank" rel="noopener">{% endif %}
+        <img
+          src="{{ '/assets/img/logos/' | append: row.logo | relative_url }}"
+          alt="{{ row.org }} logo"
+          loading="lazy"
+        >
+        {% if row.url %}</a>{% endif %}
+      </div>
+
+      <div class="affiliation-body">
+        <div class="affiliation-role">{{ row.role }}</div>
+        <div class="affiliation-org">
+          {% if row.url %}
+            <a href="{{ row.url }}" target="_blank" rel="noopener">{{ row.org }}</a>
+          {% else %}
+            {{ row.org }}
+          {% endif %}
+          {% if row.location %}<span class="affiliation-location">{{ row.location }}</span>{% endif %}
+        </div>
+        {% if row.detail %}<div class="affiliation-detail">{{ row.detail }}</div>{% endif %}
+      </div>
+
+      <div class="affiliation-years">{{ row.years }}</div>
+    </div>
+  {% endfor %}
+</div>
