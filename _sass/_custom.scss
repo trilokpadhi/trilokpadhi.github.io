@@ -42,7 +42,7 @@ html[data-theme="dark"] {
   }
 
   .about-main > .clearfix {
-    line-height: 1.7;
+    line-height: 1.55;
 
     p {
       margin-bottom: 1.15rem;
@@ -678,7 +678,7 @@ html[data-theme="dark"] .callout {
   --global-theme-color: #c0442a;
   --global-hover-color: #9c3620;
   --global-bg-color: #fbf9f6;
-  --serif: "Source Serif 4", "Iowan Old Style", Georgia, serif;
+  --serif: Newsreader, Georgia, "Times New Roman", serif;
   --sans: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
@@ -698,8 +698,8 @@ body,
 
 body {
   background-color: var(--global-bg-color);
-  font-size: 1.02rem;
-  line-height: 1.65;
+  font-size: 1rem; // the reference runs plain 16px; Newsreader is compact enough
+  line-height: 1.55;
 }
 
 // Navigation, sidebar meta and anything tabular stay in the sans: small
@@ -760,7 +760,7 @@ body::before {
 
 .sidebar-name {
   font-family: var(--serif);
-  font-size: 1.45rem;
+  font-size: 1.25rem;
   font-weight: 700;
 }
 
@@ -781,7 +781,7 @@ body::before {
 
 .hero-headline {
   font-family: var(--serif);
-  font-size: clamp(1.9rem, 3.6vw, 2.9rem);
+  font-size: clamp(1.6rem, 2.9vw, 2.3rem);
   font-weight: 600;
   line-height: 1.12;
   letter-spacing: -0.015em;
@@ -796,7 +796,7 @@ body::before {
 .post .about-main > h2,
 .post .about-main > .clearfix > h2 {
   font-family: var(--serif);
-  font-size: 1.55rem;
+  font-size: 1.3rem;
 }
 
 .about-heading {
