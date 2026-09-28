@@ -1,9 +1,11 @@
-# Research interests shown on the homepage as a plain list of topic names,
-# matching the reference bio's format. Rendered by _includes/research_areas.liquid.
+# Research interests shown on the homepage as a plain list of topic names.
+# Rendered by _includes/research_areas.liquid.
 
-- Neuro-Symbolic and Knowledge-Infused AI
-- Interpretability and Uncertainty Quantification
-- LLM Agents and Multi-Agent Systems
-- Vision-Language and Action Models
-- Knowledge Graphs, Retrieval, and Grounding
-- AI Safety and Social Impact
+- World Action Models
+- Test-Time Discovery
+- Knowledge Acquisition
+- Skill Discovery
+- Physical AI
+- Interpretability
+- Uncertainty Quantification
+- Automated Hypothesis Extraction
