@@ -20,8 +20,12 @@ module Jekyll
       private
 
       def directory_files_content
-        target_path = File.join(directory, '**', '*')
-        Dir[target_path].map{|f| File.read(f) unless File.directory?(f) }.join
+        # Sorted so the digest does not depend on filesystem enumeration order,
+        # which differs between a local machine and the CI runner and would
+        # otherwise make the hash flap between builds.
+        Array(directory).flat_map do |dir|
+          Dir[File.join(dir, '**', '*')].sort.map { |f| File.read(f) unless File.directory?(f) }
+        end.join
       end
 
       def file_content
@@ -43,7 +47,13 @@ module Jekyll
     end
 
     def bust_css_cache(file_name)
-      CacheDigester.new(file_name: file_name, directory: 'assets/_sass').digest!
+      # Upstream points this at 'assets/_sass', which does not exist in this
+      # theme: the partials live in _sass/ and the entrypoint in assets/css/.
+      # Globbing a missing directory yields an empty string, so every build
+      # emitted MD5("") = d41d8cd98f00b204e9800998ecf8427e and the stylesheet
+      # URL never changed. Browsers therefore kept serving a stale sheet after
+      # any CSS edit, with no way to know it had changed.
+      CacheDigester.new(file_name: file_name, directory: ['_sass', 'assets/css']).digest!
     end
   end
 end
