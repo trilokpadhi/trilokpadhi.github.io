@@ -703,18 +703,18 @@ body {
   line-height: 1.55;
 }
 
-// Navigation, sidebar meta and anything tabular stay in the sans: small
-// letterspaced caps in a serif read as decoration rather than as labels.
+// Only the chrome stays sans: the navbar, the small meta under the sidebar
+// photo, and the footer. Small letterspaced caps in a serif read as decoration
+// rather than as labels, which is why those keep it.
+//
+// Everything in the main column is body text and takes the serif, including
+// education, experience, research interests and the citation lines. Treating
+// those as "tabular meta" left the page in two typefaces for no reason a
+// reader could see.
 #navbar .navbar-brand,
 #navbar .nav-link,
 .sidebar-role,
 .profile-links,
-.affiliation-years,
-.affiliation-org,
-.affiliation-detail,
-.news .date,
-.publications .periodical,
-.research-areas,
 footer {
   font-family: var(--sans);
 }
