@@ -876,37 +876,40 @@ body::before {
 // -----------------------------------------------------------------------------
 // Collaborator marquee
 // -----------------------------------------------------------------------------
-// Sidebar strip of logos drifting right to left. The track holds the list twice
-// and travels exactly -50%, so the second copy occupies the first's position at
-// the moment the loop restarts and there is no seam.
+// Full-width strip above news, drifting left to right. The track holds the list
+// twice and animates from -50% to 0, so the copy arriving on the left is
+// already in position when the loop restarts and there is no seam.
 
 .collab {
-  margin-top: 1.5rem;
-  padding-top: 1.1rem;
+  margin: 2.5rem 0 1rem;
+  padding-top: 1.25rem;
   border-top: 1px solid var(--global-divider-color);
 }
 
 .collab-note {
   font-family: var(--sans);
-  font-size: 0.72rem;
+  font-size: 0.74rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--global-text-color-light);
-  margin-bottom: 0.7rem;
+  margin-bottom: 1rem;
 }
 
 .collab-viewport {
   overflow: hidden;
   // Fade both edges so logos enter and leave rather than being chopped off.
-  mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
 }
 
 .collab-track {
   display: flex;
   align-items: center;
   width: max-content;
-  animation: collab-scroll 26s linear infinite;
+  // Duration is tied to track length, so it has to move with the list: ten
+  // logos over 22s is roughly 65px/s, an easy reading pace. 30s was a crawl at
+  // six logos; 14s became too brisk once the track grew.
+  animation: collab-scroll 22s linear infinite;
 }
 
 .collab:hover .collab-track {
@@ -918,29 +921,28 @@ body::before {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 30px;
-  padding: 0 0.9rem;
+  height: 46px;
+  // Tight enough that three or four marks are in view at once; at 2rem only
+  // two fitted the column and the strip read as empty between them.
+  padding: 0 1.4rem;
 
   img {
-    max-height: 26px;
+    // Definite height, not max-height: only the Meta file carries intrinsic
+    // width/height, and an SVG with nothing but a viewBox collapses to zero in
+    // a flex item given only a maximum. That is why Adobe and Salesforce were
+    // missing from the strip.
+    height: 30px;
     width: auto;
-    // Desaturated so six brand palettes do not shout over the sidebar.
-    filter: grayscale(1);
-    opacity: 0.55;
   }
 }
 
-.collab:hover .collab-item img {
-  filter: grayscale(0);
-  opacity: 1;
-}
-
+// Left to right: start the track shifted left and bring it back to zero.
 @keyframes collab-scroll {
   from {
-    transform: translateX(0);
+    transform: translateX(-50%);
   }
   to {
-    transform: translateX(-50%);
+    transform: translateX(0);
   }
 }
 
@@ -949,6 +951,7 @@ body::before {
     animation: none;
     flex-wrap: wrap;
     width: 100%;
+    justify-content: center;
   }
 
   .collab-viewport {

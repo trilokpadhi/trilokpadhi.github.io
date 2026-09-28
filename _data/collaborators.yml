@@ -1,4 +1,4 @@
-# Organisations shown in the sidebar collaborator marquee.
+# Organisations shown in the marquee above news.
 # Rendered by _includes/collaborators.liquid; logos live in assets/img/logos/.
 
 - name: Amazon
@@ -9,7 +9,15 @@
   logo: meta.svg
 - name: Salesforce
   logo: salesforce.svg
+- name: Siemens
+  logo: siemens.svg
 - name: SRI International
   logo: sri.svg
 - name: Rakuten
   logo: rakuten.svg
+- name: Georgia Tech
+  logo: gatech.svg
+- name: Wright State University
+  logo: wrightstate.svg
+- name: Cal Poly San Luis Obispo
+  logo: calpoly.svg

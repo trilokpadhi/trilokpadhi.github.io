@@ -49,6 +49,8 @@ latest_posts:
 
 {% include research_areas.liquid %}
 
+{% include collaborators.liquid %}
+
 ## [news]({{ '/news/' | relative_url }})
 
 {% include news.liquid limit=true %}
