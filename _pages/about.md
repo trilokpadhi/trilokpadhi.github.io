@@ -32,17 +32,19 @@ latest_posts:
 
 <h1 class="hero-headline">Multimodal agents that <em>know when they're wrong</em>.</h1>
 
-**Where I am.** I am a Ph.D. Candidate in Computer Science at [Georgia State University](https://www.gsu.edu/), USA, advised by [Prof. Ugur Kursuncu](https://www.ugurkursuncu.com/) in the [SWAN AI Research Group](https://www.ugurkursuncu.com/SWAN-AI/). I also work closely with Prof. Yi Ding, Prof. Valerie Shalin, and Dr. Yaman Kumar Singla.
+I'm a Ph.D. Candidate in Computer Science at [Georgia State University](https://www.gsu.edu/), advised by [Prof. Ugur Kursuncu](https://www.ugurkursuncu.com/) in the [SWAN AI Research Group](https://www.ugurkursuncu.com/SWAN-AI/). I also work with Prof. Yi Ding, Prof. Valerie Shalin, and Dr. Yaman Kumar Singla.
 
-**What I am building.** Multimodal AI systems that can ground, verify, and report their own uncertainty: anchoring the empirical power of large vision-language models (LVLMs) in structured knowledge and statistical guarantees, with the long-term goal of agents that are not just capable, but can tell you when they are wrong.
-
-**How I work on it.** My research lies at the intersection of multimodal machine learning and trustworthy AI, developing knowledge-infused and neuro-symbolic techniques that strengthen vision-language models at both the training and inference stage. I specialize in combining knowledge graphs, conformal prediction, and visual grounding with LLMs through knowledge infusion, distillation, and calibration to advance their reliability in interpretability (step-wise failure detection in agents), uncertainty quantification (calibrated confidence for multimodal LLMs), and safety (multi-turn red-teaming of agents). My work has appeared at ACL, ICWSM, IEEE BigData, ACM TIST, and the ICML and EMNLP workshops.
+**What I'm working on.** A vision-language model can describe a scene and act on it. It is much worse at knowing when it should not. I work on closing that gap three ways: reading what a model is doing internally so a failure is visible before the task ends, tying its stated confidence to evidence it can actually point at, and pushing it until it breaks so that someone else does not do it first. A fourth thread asks how much of this survives at small scale, when you add structured knowledge instead of parameters.
 
 ## research interests
 
 {% include research_areas.liquid %}
 
-**Where I have been.** I earned my Bachelor's degree in Electronics and Communication Engineering from [Veer Surendra Sai University of Technology](https://www.vssut.ac.in/) (2020). In Summers 2025 and 2026, I interned at **Siemens** (Data & AI Research, Seattle) as an Applied Scientist, working on synthetic data generation and pretraining for Physical AI foundation models. In Summer 2024, I interned at **SRI International** with the Neuro-Symbolic Computing and Intelligence group on uncertainty quantification for multimodal LLMs. Before my Ph.D., I was a Data Scientist at **Rakuten**, and I have held research internships at **Bosch Research** and **NVIDIA Research**. I am also a recipient of the ACL Student Travel Award (2025) and the IEEE BigData Student Travel Award (2024), and was National Champion at the Smart India Hackathon (2018). Here is my [CV]({{ '/cv/' | relative_url }}).
+**Where I'm coming from.** Before the Ph.D. I spent a year as a Data Scientist at **Rakuten** in Bengaluru, and earned my B.Tech. in Electronics and Communication Engineering from [Veer Surendra Sai University of Technology](https://www.vssut.ac.in/). Since starting, I have interned at **Siemens** (Data & AI Research, Seattle) on synthetic data and pretraining for Physical AI foundation models, at **SRI International** on uncertainty quantification for multimodal LLMs, and earlier at **Bosch Research** and **NVIDIA Research**.
+
+The through-line is measurement. Most of these projects end in a number that says how much you should trust the system, not only how well it scores. That work has appeared at ACL, ICWSM, IEEE BigData, ACM TIST, and workshops at ICML and EMNLP, and carried student travel awards from ACL and IEEE BigData.
+
+You can reach me at [tpadhi1@student.gsu.edu](mailto:tpadhi1@student.gsu.edu), read my [CV]({{ '/cv/' | relative_url }}), or browse my [publications]({{ '/publications/' | relative_url }}).
 
 ## education
 
