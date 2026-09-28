@@ -1,0 +1,15 @@
+# Organisations shown in the sidebar collaborator marquee.
+# Rendered by _includes/collaborators.liquid; logos live in assets/img/logos/.
+
+- name: Amazon
+  logo: amazon.svg
+- name: Adobe
+  logo: adobe.svg
+- name: Meta
+  logo: meta.svg
+- name: Salesforce
+  logo: salesforce.svg
+- name: SRI International
+  logo: sri.svg
+- name: Rakuten
+  logo: rakuten.svg

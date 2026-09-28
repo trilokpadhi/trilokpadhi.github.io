@@ -872,3 +872,87 @@ body::before {
 .publications abbr.badge {
   border-radius: 2px;
 }
+
+// -----------------------------------------------------------------------------
+// Collaborator marquee
+// -----------------------------------------------------------------------------
+// Sidebar strip of logos drifting right to left. The track holds the list twice
+// and travels exactly -50%, so the second copy occupies the first's position at
+// the moment the loop restarts and there is no seam.
+
+.collab {
+  margin-top: 1.5rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--global-divider-color);
+}
+
+.collab-note {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--global-text-color-light);
+  margin-bottom: 0.7rem;
+}
+
+.collab-viewport {
+  overflow: hidden;
+  // Fade both edges so logos enter and leave rather than being chopped off.
+  mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+}
+
+.collab-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: collab-scroll 26s linear infinite;
+}
+
+.collab:hover .collab-track {
+  animation-play-state: paused;
+}
+
+.collab-item {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  padding: 0 0.9rem;
+
+  img {
+    max-height: 26px;
+    width: auto;
+    // Desaturated so six brand palettes do not shout over the sidebar.
+    filter: grayscale(1);
+    opacity: 0.55;
+  }
+}
+
+.collab:hover .collab-item img {
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+@keyframes collab-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .collab-track {
+    animation: none;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .collab-viewport {
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+}

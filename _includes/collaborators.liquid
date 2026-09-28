@@ -1,0 +1,25 @@
+{% comment %}
+  Continuous right-to-left marquee of collaborator logos for the sidebar.
+  The list is rendered twice inside the track: the animation translates by
+  exactly -50%, so as the first copy leaves the second is already in its place
+  and the loop has no visible seam.
+{% endcomment %}
+
+<div class="collab">
+  <p class="collab-note">With thanks to my collaborators</p>
+  <div class="collab-viewport">
+    <div class="collab-track">
+      {% for pass in (1..2) %}
+        {% for c in site.data.collaborators %}
+          <span class="collab-item" {% if pass == 2 %}aria-hidden="true"{% endif %}>
+            <img
+              src="{{ '/assets/img/logos/' | append: c.logo | relative_url }}"
+              alt="{% if pass == 1 %}{{ c.name }}{% endif %}"
+              loading="lazy"
+            >
+          </span>
+        {% endfor %}
+      {% endfor %}
+    </div>
+  </div>
+</div>

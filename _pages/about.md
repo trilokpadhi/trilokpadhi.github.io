@@ -5,6 +5,7 @@ permalink: /
 banner: banner.jpg
 main_heading: about
 hero_rotate: true
+collaborators: true
 banner_alt: SWAN AI Research Group and collaborators at USC Viterbi
 subtitle: Ph.D. Candidate, Computer Science · <a href='https://www.gsu.edu/'>Georgia State University</a>
 
@@ -14,7 +15,7 @@ profile:
   image_circular: false # square portrait, as on the reference
   links: true # labelled profile links under the photo (see _includes/profile_links.liquid)
 
-news: true # includes a list of news items
+news: false # rendered inline after research interests instead of at the layout's default position
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: false # the sidebar carries labelled links instead of a bottom icon row
 
@@ -47,6 +48,10 @@ latest_posts:
 ## research interests
 
 {% include research_areas.liquid %}
+
+## [news]({{ '/news/' | relative_url }})
+
+{% include news.liquid limit=true %}
 
 **Where I have been.** I earned my Bachelor's degree in Electronics and Communication Engineering from [Veer Surendra Sai University of Technology](https://www.vssut.ac.in/) in 2020. Before starting my Ph.D., I was a Data Scientist in **Rakuten's Data Science Consulting team**, working on business impact estimation, customer acquisition, and funnel analysis across the Rakuten group. I collaborated with an international team and developed interpretable churn prediction models to inform customer retention strategies. I also held research internships at **Bosch Research** and **NVIDIA Research**.
 
