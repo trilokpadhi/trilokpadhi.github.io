@@ -63,4 +63,4 @@ latest_posts:
 
 ## experience
 
-{% include affiliations.liquid list="experience" %}
+{% include affiliations.liquid list="experience" scrollable=true %}

@@ -1,12 +1,13 @@
 {% comment %}
   Renders a list of education or experience rows with the organisation's logo.
   Usage: {% include affiliations.liquid list="experience" %}
+  Pass scrollable=true to cap the height and scroll, as the news list does.
   Data lives in _data/affiliations.yml.
 {% endcomment %}
 
 {% assign rows = site.data.affiliations[include.list] %}
 
-<div class="affiliations">
+<div class="affiliations{% if include.scrollable %} affiliations-scroll{% endif %}">
   {% for row in rows %}
     <div class="affiliation">
       <div class="affiliation-logo">

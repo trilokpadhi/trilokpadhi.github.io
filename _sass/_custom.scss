@@ -959,3 +959,13 @@ body::before {
     -webkit-mask-image: none;
   }
 }
+
+// Experience is long enough to crowd out everything below it, so it scrolls
+// the way the news list does. Education has two rows and is left alone: a
+// scrollbar on two entries reads as broken rather than as a control.
+.affiliations-scroll {
+  max-height: min(26rem, 70vh);
+  overflow-y: auto;
+  // Room for the scrollbar so it does not sit on top of the year column.
+  padding-right: 0.5rem;
+}
