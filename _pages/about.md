@@ -6,7 +6,7 @@ banner: banner.jpg
 main_heading: about
 hero_rotate: true
 banner_alt: SWAN AI Research Group and collaborators at USC Viterbi
-subtitle: Ph.D. Student, Computer Science · <a href='https://www.gsu.edu/'>Georgia State University</a>
+subtitle: Ph.D. Candidate, Computer Science · <a href='https://www.gsu.edu/'>Georgia State University</a>
 
 profile:
   align: left
@@ -29,11 +29,11 @@ latest_posts:
   limit: 3
 ---
 
-<p class="hero-eyebrow">Ph.D. Student · Georgia State University · Atlanta</p>
+<p class="hero-eyebrow">Ph.D. Candidate · Georgia State University · Atlanta</p>
 
 <h1 class="hero-headline">Making Multimodal Agents and World Action Models <em class="rotate" data-words="reliable|interpretable|grounded|better at causal reasoning|better at test-time discovery">reliable</em>.</h1>
 
-**Where I am.** I am a fifth-year Ph.D. student in Computer Science at [Georgia State University](https://www.gsu.edu/), USA, advised by [Prof. Ugur Kursuncu](https://www.ugurkursuncu.com/) in the [SWAN AI Research Group](https://www.ugurkursuncu.com/SWAN-AI/). During my Ph.D., I spent the summers of 2025 and 2026 as an Applied Scientist Intern on **Siemens' Data & AI Research team** in Seattle, working on multimodal industrial foundation models and synthetic data generation and evaluation for Physical AI. In summer 2024, I interned with the **Neuro-Symbolic Computing and Intelligence group at SRI International**, researching uncertainty quantification for multimodal LLMs through an ARPA-H-funded project.
+**Where I am.** I am a fifth-year Ph.D. candidate in Computer Science at [Georgia State University](https://www.gsu.edu/), USA, advised by [Prof. Ugur Kursuncu](https://www.ugurkursuncu.com/) in the [SWAN AI Research Group](https://www.ugurkursuncu.com/SWAN-AI/). During my Ph.D., I spent the summers of 2025 and 2026 as an Applied Scientist Intern on **Siemens' Data & AI Research team** in Seattle, working on multimodal industrial foundation models and synthetic data generation and evaluation for Physical AI. In summer 2024, I interned with the **Neuro-Symbolic Computing and Intelligence group at SRI International**, researching uncertainty quantification for multimodal LLMs through an ARPA-H-funded project.
 
 **What I am building.** My research focuses on building **reliable, self-improving multimodal AI models and agents** that learn from experience, ground their reasoning in evidence, and remain safe as tasks and environments change.
 
