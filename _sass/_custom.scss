@@ -977,11 +977,11 @@ body::before {
   will-change: opacity;
 
   img {
-    // A longer ramp than the first attempt: starting the fade at 62% left a
-    // visible band where the photograph was still solid, so the edge read as
-    // softened rather than as dissolving.
-    mask-image: linear-gradient(to bottom, #000 38%, rgba(0, 0, 0, 0.55) 74%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to bottom, #000 38%, rgba(0, 0, 0, 0.55) 74%, transparent 100%);
+    // Confined to the bottom edge. Starting the ramp at 38% washed out almost
+    // half the photograph; the fade only needs to soften where the image meets
+    // the page, not dim the subject.
+    mask-image: linear-gradient(to bottom, #000 80%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, #000 80%, transparent 100%);
   }
 }
 
