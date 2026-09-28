@@ -977,12 +977,34 @@ body::before {
   will-change: opacity;
 
   img {
-    mask-image: linear-gradient(to bottom, #000 62%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to bottom, #000 62%, transparent 100%);
+    // A longer ramp than the first attempt: starting the fade at 62% left a
+    // visible band where the photograph was still solid, so the edge read as
+    // softened rather than as dissolving.
+    mask-image: linear-gradient(to bottom, #000 38%, rgba(0, 0, 0, 0.55) 74%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, #000 38%, rgba(0, 0, 0, 0.55) 74%, transparent 100%);
   }
 }
 
 // The news list ran straight into the paragraph beneath it.
 .news {
   margin-bottom: 2.75rem;
+}
+
+// -----------------------------------------------------------------------------
+// Scroll containers fade at the edge
+// -----------------------------------------------------------------------------
+// Both scrolling lists cut their last visible row in half, which reads as a
+// rendering fault rather than as "there is more below". Fading the bottom edge
+// makes the clip deliberate and signals that the list continues.
+
+.news .table-responsive,
+.affiliations-scroll {
+  mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
+}
+
+// A faded row is harder to read, so give the list a little more height to
+// compensate for what the gradient eats.
+.affiliations-scroll {
+  max-height: min(29rem, 72vh);
 }
