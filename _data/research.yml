@@ -2,9 +2,10 @@
 # Rendered by _includes/research_areas.liquid.
 
 - World Action Models
-- Test-Time Discovery
+- Test-Time Learning
+- Neuro-Symbolic Systems
+- Knowledge Graphs
 - Knowledge Acquisition
-- Skill Discovery
 - Physical AI
 - Interpretability
 - Uncertainty Quantification
