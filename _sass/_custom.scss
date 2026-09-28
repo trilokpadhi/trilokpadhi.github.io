@@ -909,7 +909,7 @@ body::before {
   // Duration is tied to track length, so it has to move with the list: ten
   // logos over 22s is roughly 65px/s, an easy reading pace. 30s was a crawl at
   // six logos; 14s became too brisk once the track grew.
-  animation: collab-scroll 22s linear infinite;
+  animation: collab-scroll 26s linear infinite;
 }
 
 .collab:hover .collab-track {

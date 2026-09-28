@@ -1,6 +1,14 @@
 # Organisations shown in the marquee above news.
 # Rendered by _includes/collaborators.liquid; logos live in assets/img/logos/.
+#
+# Two kinds of entry sit here: places worked (Siemens, SRI, Rakuten, Bosch,
+# NVIDIA) and institutions co-authors are at (Amazon, Adobe, Meta, Salesforce,
+# Georgia Tech, Wright State, Cal Poly). The heading has to cover both.
 
+- name: Siemens
+  logo: siemens.svg
+- name: SRI International
+  logo: sri.svg
 - name: Amazon
   logo: amazon.svg
 - name: Adobe
@@ -9,12 +17,12 @@
   logo: meta.svg
 - name: Salesforce
   logo: salesforce.svg
-- name: Siemens
-  logo: siemens.svg
-- name: SRI International
-  logo: sri.svg
 - name: Rakuten
   logo: rakuten.svg
+- name: Bosch
+  logo: bosch.svg
+- name: NVIDIA
+  logo: nvidia.svg
 - name: Georgia Tech
   logo: gatech.svg
 - name: Wright State University
