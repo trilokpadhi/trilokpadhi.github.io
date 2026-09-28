@@ -806,3 +806,38 @@ body::before {
 .lead-statement {
   display: none; // folded into the headline
 }
+
+// Rotating word in the hero headline. A blinking caret sits after it so the
+// line reads as being typed rather than as a layout glitch; min-width is set
+// in JS from the longest word so the headline never reflows mid-animation.
+.hero-headline .rotate {
+  position: relative;
+}
+
+.hero-headline .rotate::after {
+  content: "";
+  display: inline-block;
+  width: 2px;
+  height: 0.85em;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  background-color: currentColor;
+  animation: hero-caret 1s step-end infinite;
+}
+
+@keyframes hero-caret {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-headline .rotate::after {
+    animation: none;
+    opacity: 0;
+  }
+}

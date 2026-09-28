@@ -99,3 +99,7 @@ layout: default
     </article>
   </div>
 </div>
+
+{% if page.hero_rotate %}
+  <script defer src="{{ '/assets/js/hero-rotate.js' | relative_url | bust_file_cache }}"></script>
+{% endif %}
