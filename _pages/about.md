@@ -39,7 +39,7 @@ latest_posts:
 
 - **Grounded Multimodal Reasoning:** Combining structured knowledge, visual grounding, and knowledge distillation to improve contextual understanding in vision-language models ([ACL Findings '25](https://arxiv.org/abs/2411.12174), [IEEE BigData '24](https://arxiv.org/abs/2402.03607)).
 - **Agent Safety:** Investigating vulnerabilities through multi-turn red-teaming, adversarial interactions, and theory-guided behavioral evaluation ([AAAI ICWSM '27, accepted](https://arxiv.org/abs/2510.14207), [ACM TIST '26](https://arxiv.org/abs/2501.09039)).
-- **Uncertainty and Interpretability:** Calibrating multimodal confidence using visual evidence ([Preprint](https://arxiv.org/abs/2505.03788)) and combining conformal prediction with representation probing for early failure detection in agents ([ICML Workshop '26](https://arxiv.org/abs/2604.19775)).
+- **Uncertainty and Interpretability:** Calibrating multimodal confidence using visual evidence ([EMNLP GroundLM Workshop '26](https://arxiv.org/abs/2505.03788)) and combining conformal prediction with representation probing for early failure detection in agents ([ICML Workshop '26](https://arxiv.org/abs/2604.19775)).
 - **Self-Improving Agents:** Learning from failures through preference optimization and co-evolving agents ([Preprint](https://arxiv.org/abs/2511.22254)).
 
 **Ongoing work, more soon.** I am also exploring **world-action models for Physical AI**, **multi-agent simulation and alignment with human behavior**, and **enterprise agents that help users discover, access, and reason over organizational data**.

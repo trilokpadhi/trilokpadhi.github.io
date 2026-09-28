@@ -21,3 +21,6 @@
 
 "ICML WS":
   color: "#1f6feb"
+
+"EMNLP WS":
+  color: "#c0442a"

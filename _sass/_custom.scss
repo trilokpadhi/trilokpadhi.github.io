@@ -98,8 +98,9 @@ html[data-theme="dark"] {
     line-height: 1.6;
   }
 
-  .date {
-    color: var(--global-text-color-light);
+  // The date cell is a bare <th scope="row">; news.liquid gives it no class,
+  // so a .date selector matches nothing.
+  table th {
     font-weight: 500;
     white-space: nowrap;
   }
@@ -840,4 +841,34 @@ body::before {
     animation: none;
     opacity: 0;
   }
+}
+
+// -----------------------------------------------------------------------------
+// Accent on the recurring markers
+// -----------------------------------------------------------------------------
+// News dates, the sidebar link icons and the author's own name in each citation
+// were all muted grey, so the accent appeared only in links and the hero. These
+// three repeat down the page and carry it without adding any new colour.
+
+.news table th {
+  color: var(--global-theme-color);
+}
+
+.profile-links a i {
+  color: var(--global-theme-color);
+}
+
+// al-folio wraps the site owner's name in <em> inside .author.
+.publications .author em,
+.about-main .author em {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--global-theme-color);
+  border-bottom: none;
+}
+
+// Venue badges keep their own per-venue colours from _data/venues.yml, which is
+// where the blues come from; only the neutral fallbacks pick up the accent.
+.publications abbr.badge {
+  border-radius: 2px;
 }
