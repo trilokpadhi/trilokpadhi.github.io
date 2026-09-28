@@ -43,3 +43,35 @@ document.addEventListener("DOMContentLoaded", function () {
     })();
   });
 });
+
+// Fade the hero banner out as it scrolls away. Done in JS rather than with a
+// scroll-driven CSS animation because animation-timeline is still absent from
+// Safari, and this is small enough not to warrant a fallback path.
+document.addEventListener("DOMContentLoaded", function () {
+  const banner = document.querySelector(".page-banner");
+  if (!banner) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  let ticking = false;
+
+  const update = function () {
+    const height = banner.offsetHeight || 1;
+    // Fully opaque at the top, gone by the time the banner has scrolled past.
+    const progress = Math.min(Math.max(window.scrollY / height, 0), 1);
+    banner.style.opacity = String(1 - progress * 0.95);
+    ticking = false;
+  };
+
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (!ticking) {
+        ticking = true;
+        window.requestAnimationFrame(update);
+      }
+    },
+    { passive: true }
+  );
+
+  update();
+});

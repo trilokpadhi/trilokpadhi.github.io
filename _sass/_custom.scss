@@ -969,3 +969,20 @@ body::before {
   // Room for the scrollbar so it does not sit on top of the year column.
   padding-right: 0.5rem;
 }
+
+// Soften the banner's bottom edge into the page rather than cutting it off
+// square, and keep the opacity change (set from JS on scroll) smooth.
+.page-banner {
+  position: relative;
+  will-change: opacity;
+
+  img {
+    mask-image: linear-gradient(to bottom, #000 62%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, #000 62%, transparent 100%);
+  }
+}
+
+// The news list ran straight into the paragraph beneath it.
+.news {
+  margin-bottom: 2.75rem;
+}
