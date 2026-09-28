@@ -28,10 +28,10 @@
   type: time_table
   contents:
     - title: Applied Scientist Intern
-      institution: Siemens GenAI R&D, Seattle, WA
+      institution: Siemens, Seattle, WA
       year: Summers 2025 & 2026
       description:
-        - Mentors:&nbsp;Dr. Robert Zhu, Dr. Ivo Santos. Data & AI Research (DAI) team.
+        - Mentors:&nbsp;Dr. Robert Zhu, Dr. Ivo Santos. Data &amp; AI Research team.
         - title: 2025
           contents:
             - Development and evaluation of large-scale multimodal industrial foundation models, focusing on robust pretraining strategies and post-training techniques, aligned with Siemens' Industrial Foundation Models initiative.
