@@ -75,3 +75,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   update();
 });
+
+// Publish the scrollbar width so the full-bleed banner can subtract it. Without
+// this, a 100vw element is wider than the visible page by exactly the scrollbar
+// and the document picks up a horizontal scroll.
+(function () {
+  const setScrollbarWidth = function () {
+    const sbw = window.innerWidth - document.documentElement.clientWidth;
+    document.documentElement.style.setProperty("--sbw", Math.max(sbw, 0) + "px");
+  };
+  setScrollbarWidth();
+  window.addEventListener("resize", setScrollbarWidth, { passive: true });
+})();

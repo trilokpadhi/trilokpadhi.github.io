@@ -469,8 +469,13 @@ a {
 // sets a `banner:` in front matter.
 
 .page-banner {
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
+  // 100vw counts the scrollbar, so a plain 100vw breakout is wider than the
+  // visible page and the whole document scrolls sideways. --sbw is measured in
+  // JS and subtracted; it falls back to 0 where the script has not run yet,
+  // which is the pre-existing behaviour rather than something worse.
+  width: calc(100vw - var(--sbw, 0px));
+  max-width: calc(100vw - var(--sbw, 0px));
+  margin-left: calc(50% - 50vw + (var(--sbw, 0px) / 2));
   margin-bottom: 2rem;
   line-height: 0; // kill the inline-image descender gap
 
@@ -1007,4 +1012,28 @@ body::before {
 // compensate for what the gradient eats.
 .affiliations-scroll {
   max-height: min(29rem, 72vh);
+}
+
+// -----------------------------------------------------------------------------
+// Wide screens
+// -----------------------------------------------------------------------------
+// The content column is capped at 930px while the banner spans the viewport, so
+// past about 1500px the banner dominates and the text looks marooned in the
+// middle. Let the column grow with the screen, and give the banner a little
+// more height so the two stay in proportion.
+
+@media (min-width: 1500px) {
+  .container {
+    max-width: 1080px;
+  }
+
+  .page-banner img {
+    height: clamp(150px, 26vw, 390px);
+  }
+}
+
+@media (min-width: 2000px) {
+  .container {
+    max-width: 1180px;
+  }
 }
