@@ -469,13 +469,17 @@ a {
 // sets a `banner:` in front matter.
 
 .page-banner {
-  // 100vw counts the scrollbar, so a plain 100vw breakout is wider than the
-  // visible page and the whole document scrolls sideways. --sbw is measured in
-  // JS and subtracted; it falls back to 0 where the script has not run yet,
-  // which is the pre-existing behaviour rather than something worse.
-  width: calc(100vw - var(--sbw, 0px));
-  max-width: calc(100vw - var(--sbw, 0px));
-  margin-left: calc(50% - 50vw + (var(--sbw, 0px) / 2));
+  // Standard full-bleed breakout: 100vw wide, pulled back by half the
+  // difference between the viewport and this container.
+  //
+  // 100vw counts the scrollbar, so this overhangs the visible page by that
+  // width. The scrollbar is clipped away on <html> below rather than
+  // subtracted here: a custom property inside calc() does survive Sass, but
+  // purgecss rewrites "--sbw" to " - - sbw" on deploy, which invalidates the
+  // declaration and silently collapses the banner to the column width.
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
   margin-bottom: 2rem;
   line-height: 0; // kill the inline-image descender gap
 
@@ -1036,4 +1040,12 @@ body::before {
   .container {
     max-width: 1180px;
   }
+}
+
+
+// Clip the scrollbar-width overhang from the full-bleed banner. `clip` rather
+// than `hidden`: hidden makes the element a scroll container, which kills
+// position: sticky on the sidebar; clip does not.
+html {
+  overflow-x: clip;
 }
