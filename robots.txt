@@ -1,1 +1,1 @@
-User-agent: * Disallow: Sitemap: https://trilokpadhi.github.io/sitemap.xml
+User-agent: * Disallow: Sitemap: https://trilokpadhi.com/sitemap.xml
