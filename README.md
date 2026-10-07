@@ -1,6 +1,6 @@
 # trilokpadhi.github.io
 
-Personal academic website of [Trilok Padhi](https://trilokpadhi.github.io) — PhD student in Computer Science at Georgia State University.
+Personal academic website of [Trilok Padhi](https://trilokpadhi.com) — PhD student in Computer Science at Georgia State University.
 
 Built with [Jekyll](https://jekyllrb.com/) and the [al-folio](https://github.com/alshedivat/al-folio) theme.
 
