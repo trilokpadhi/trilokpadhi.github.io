@@ -489,7 +489,7 @@ a {
     // 3.6:1 crop, so `cover` has to trim vertically. Anchor near the top: the
     // only thing worth losing in a group photo is the empty floor at the
     // bottom, never anyone's head.
-    height: clamp(150px, 26vw, 330px);
+    height: clamp(170px, 26vw, 330px);
     object-fit: cover;
     object-position: center 12%;
     display: block;
@@ -549,7 +549,6 @@ a {
 
   .about-layout .profile {
     position: static;
-    max-width: 220px;
   }
 
   .about-layout-right .profile {
@@ -605,13 +604,61 @@ a {
   margin: 0 0 1.25rem;
 }
 
+// Phones get a different header altogether. Stacked, the sidebar kept its
+// photo, name and links inside a 220px column on a 412px screen: the identity
+// block filled the entire first viewport and left a dead gutter beside it. The
+// theme also centres .profile below 480px, while .profile-links a is
+// display:flex and so ignores text-align, which left a centred name sitting
+// above left-aligned links. Placing the four children explicitly puts the photo
+// beside the name and the links into two columns, so the header and the opening
+// of the bio share one screen.
 @media (max-width: 767.98px) {
   .about-layout {
     padding-top: 1rem;
   }
 
   .about-layout .profile {
-    margin-top: -3.5rem;
+    display: grid;
+    grid-template-columns: 116px minmax(0, 1fr);
+    column-gap: 1.1rem;
+    max-width: none;
+    margin-top: -2.5rem;
+    text-align: left;
+  }
+
+  .about-layout .profile > figure {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    margin: 0;
+  }
+
+  // The theme caps the photo at 200px below 480px, which overflows this column.
+  .about-layout .profile img {
+    max-width: 100%;
+  }
+
+  .about-layout .profile .sidebar-name {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: end;
+    margin: 0 0 0.1rem;
+    font-size: 1.4rem;
+  }
+
+  .about-layout .profile .sidebar-role {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: start;
+    font-size: 0.85rem;
+  }
+
+  .about-layout .profile .profile-links {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 0.9rem;
+    margin-top: 1rem;
   }
 
   .about-heading {
@@ -824,13 +871,21 @@ body::before {
   position: relative;
 }
 
+// Out of flow on purpose. As an inline-block the caret sat between the word and
+// the sentence's full stop, and an atomic inline creates a line-break
+// opportunity after it, so at some widths the "." was pushed onto a line of its
+// own. Which word triggers it depends on the viewport: at 412px it was
+// "interpretable", so no single word is at fault and shortening the copy would
+// only move the problem. Absolute positioning takes the caret out of the line
+// entirely, leaving nothing to break at.
 .hero-headline .rotate::after {
   content: "";
-  display: inline-block;
+  position: absolute;
+  left: 100%;
+  bottom: 0.1em;
   width: 2px;
   height: 0.85em;
   margin-left: 2px;
-  vertical-align: text-bottom;
   background-color: currentColor;
   animation: hero-caret 1s step-end infinite;
 }
