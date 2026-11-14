@@ -30,6 +30,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
+        },{id: "nav-gallery",
+          title: "gallery",
+          description: "Photos from talks, conferences and time with collaborators.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/gallery/";
+          },
         },{id: "news-enhancing-cross-modal-contextual-congruence-for-crowdfunding-success-was-presented-at-ieee-bigdata-2024-acceptance-rate-18-7-supported-by-the-ieee-bigdata-student-travel-award",
           title: 'Enhancing Cross-Modal Contextual Congruence for Crowdfunding Success was presented at IEEE BigData 2024...',
           description: "",
