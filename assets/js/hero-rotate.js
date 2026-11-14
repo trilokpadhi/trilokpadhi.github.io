@@ -1,22 +1,22 @@
 // Typewriter rotation for the hero headline.
-// Markup: <em class="rotate" data-words="one|two|three">one</em>
-// Words come from the data-words attribute so the copy stays in the page.
+// Markup: <span class="rotate" data-words="one|two|three">one</span>
+// Entries come from the data-words attribute so the copy stays in the page
+// (about.md builds it from the hero_questions front matter).
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".rotate[data-words]").forEach(function (el) {
     const words = el.dataset.words.split("|").filter(Boolean);
     if (words.length < 2) return;
 
-    // No width reservation here. Reserving the longest word's box strands the
-    // trailing full stop several centimetres to the right while a short word
-    // like "grounded" is showing; these words differ too much in length for
-    // that trick. Letting the line reflow is what a typewriter does anyway.
+    // Height is reserved in CSS (.rotate-stack), not here: every entry is
+    // rendered invisibly in the same grid cell, so the block below never jumps.
 
     // Anyone who has asked for less motion gets the words without the typing.
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const TYPE = 55; // ms per character typed
     const ERASE = 30; // ms per character erased
-    const HOLD = 2200; // ms a complete word stays up
+    // A whole question needs longer on screen than a single word did.
+    const HOLD = Number(el.dataset.hold) || 3600; // ms a complete entry stays up
     let index = 0;
     let chars = words[0].length;
     let erasing = true;

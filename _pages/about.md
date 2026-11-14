@@ -2,11 +2,14 @@
 layout: about
 title: about
 permalink: /
-banner: banner.jpg
 main_heading: about
 hero_rotate: true
+# Research questions the hero headline types through, in order.
+hero_questions:
+  - How can we make multimodal agents safer?
+  - Can we detect that an agent is going to fail early?
+  - What makes a model better at test-time discovery?
 collaborators: true
-banner_alt: SWAN AI Research Group and collaborators at USC Viterbi
 subtitle: Ph.D. Candidate, Computer Science · <a href='https://www.gsu.edu/'>Georgia State University</a>
 
 profile:
@@ -32,7 +35,14 @@ latest_posts:
 
 <p class="hero-eyebrow">Ph.D. Candidate · Georgia State University · Atlanta</p>
 
-<h1 class="hero-headline">Making Multimodal Agents and World Action Models <em class="rotate" data-words="reliable|interpretable|grounded|better at causal reasoning|better at test-time discovery">reliable</em>.</h1>
+{% assign hero_q = page.hero_questions %}
+<h1 class="hero-headline hero-questions">
+  <span class="sr-only">{{ hero_q | join: " " }}</span>
+  <span class="rotate-stack" aria-hidden="true">
+    {% for q in hero_q %}<span class="rotate-sizer">{{ q }}</span>{% endfor %}
+    <span class="rotate" data-words="{{ hero_q | join: '|' }}">{{ hero_q | first }}</span>
+  </span>
+</h1>
 
 I am a fifth-year Ph.D. candidate in Computer Science at [Georgia State University](https://www.gsu.edu/), USA, advised by [Prof. Ugur Kursuncu](https://www.ugurkursuncu.com/) in the [SWAN AI Research Group](https://www.ugurkursuncu.com/SWAN-AI/). During my Ph.D., I spent the summers of 2025 and 2026 as an Applied Scientist Intern on **Siemens' Data & AI Research team** in Seattle, working on multimodal industrial foundation models and synthetic data generation and evaluation for Physical AI. In summer 2024, I interned with the **Neuro-Symbolic Computing and Intelligence group at SRI International**, researching uncertainty quantification for multimodal LLMs through an ARPA-H-funded project.
 
