@@ -33,8 +33,6 @@ latest_posts:
   limit: 3
 ---
 
-<p class="hero-eyebrow">Ph.D. Candidate · Georgia State University · Atlanta</p>
-
 {% assign hero_q = page.hero_questions %}
 <h1 class="hero-headline hero-questions">
   <span class="sr-only">{{ hero_q | join: " " }}</span>
