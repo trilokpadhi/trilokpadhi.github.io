@@ -8,14 +8,18 @@ nav_order: 5
 ---
 
 <!--
-Add a photo: drop it in assets/img/gallery/ and copy one of the blocks below. Newest first.
-Wide group shots take `gallery-wide` and span the full row; portrait photos sit two to a row.
+Add a photo: drop it in assets/img/gallery/ and copy a gallery-item block under
+its year. Newest year first, and newest photo first within a year.
 -->
 
 <div class="gallery">
-  <div class="gallery-item gallery-wide">
-    {% include figure.liquid path="assets/img/gallery/usc-viterbi-group.jpg" class="img-fluid" alt="SWAN AI Research Group and collaborators at USC Viterbi" caption="SWAN AI Research Group and collaborators at USC Viterbi." zoomable=true loading="lazy" %}
+  <h2 class="gallery-year">2026</h2>
+
+  <div class="gallery-item">
+    {% include figure.liquid path="assets/img/gallery/usc-viterbi-group.jpg" class="img-fluid" alt="SWAN AI Research Group and collaborators at ICWSM 2026, USC Viterbi" caption="SWAN AI Research Group and collaborators at ICWSM 2026, USC Viterbi, Los Angeles, May 2026." zoomable=true loading="lazy" %}
   </div>
+
+  <h2 class="gallery-year">2025</h2>
 
   <div class="gallery-item">
     {% include figure.liquid path="assets/img/gallery/acl-2025-chris-manning.jpg" class="img-fluid" alt="Trilok Padhi with Christopher Manning at ACL 2025 in Vienna" caption="With Christopher Manning at ACL 2025, Vienna." zoomable=true loading="lazy" %}
