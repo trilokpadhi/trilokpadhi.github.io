@@ -4,11 +4,24 @@ title: about
 permalink: /
 main_heading: about
 hero_rotate: true
-# Research questions the hero headline types through, in order.
-hero_questions:
-  - How can we make multimodal agents safer?
-  - Can we detect that an agent is going to fail early?
-  - What makes a model better at test-time discovery?
+# Hero headline: a fixed lead followed by a rotating phrase and a full stop.
+# Each phrase may carry a `link` (shown under the headline once it has typed
+# out); /publications/?topic=<key> opens the list filtered to a theme in
+# _data/themes.yml.
+hero_lead: Making Multimodal Agents and World Action Models
+hero_phrases:
+  - text: safer at test time
+    link: /publications/?topic=safety
+    link_text: See the agent safety papers
+  - text: interpretable in their decisions
+    link: /publications/?topic=uncertainty
+    link_text: See the uncertainty and interpretability papers
+  - text: recursively self-improving
+    link: /publications/?topic=self-improving
+    link_text: See the self-improvement papers
+  - text: knowledge grounded in evidence
+    link: /publications/?topic=grounding
+    link_text: See the grounded reasoning papers
 collaborators: true
 subtitle: Ph.D. Candidate, Computer Science · <a href='https://www.gsu.edu/'>Georgia State University</a>
 
@@ -33,23 +46,22 @@ latest_posts:
   limit: 3
 ---
 
-{% assign hero_q = page.hero_questions %}
-<h1 class="hero-headline hero-questions">
-  <span class="sr-only">{{ hero_q | join: " " }}</span>
+{% assign hero_p = page.hero_phrases %}
+{% assign hero_texts = hero_p | map: "text" %}
+{% assign hero_first = hero_p | first %}
+<h1 class="hero-headline">
+  <span class="sr-only">{{ page.hero_lead }} {{ hero_texts | join: ", " }}.</span>
   <span class="rotate-stack" aria-hidden="true">
-    {% for q in hero_q %}<span class="rotate-sizer">{{ q }}</span>{% endfor %}
-    <span class="rotate" data-words="{{ hero_q | join: '|' }}">{{ hero_q | first }}</span>
+    <span class="rotate-live">{{ page.hero_lead }} <em class="rotate rotate-word" data-words="{{ hero_texts | join: '|' }}" data-links="{{ hero_p | map: 'link' | join: '|' }}" data-link-texts="{{ hero_p | map: 'link_text' | join: '|' | escape }}">{{ hero_first.text }}</em>.</span>
   </span>
 </h1>
+<p class="hero-link-line"><a class="hero-link{% if hero_first.link %} is-shown{% endif %}" href="{{ hero_first.link | default: '#' }}">{{ hero_first.link_text }}</a></p>
 
 I am a fifth-year Ph.D. candidate in Computer Science at [Georgia State University](https://www.gsu.edu/), USA, advised by [Prof. Ugur Kursuncu](https://www.ugurkursuncu.com/) in the [SWAN AI Research Group](https://www.ugurkursuncu.com/SWAN-AI/). During my Ph.D., I spent the summers of 2025 and 2026 as an Applied Scientist Intern on **Siemens' Data & AI Research team** in Seattle, working on multimodal industrial foundation models and synthetic data generation and evaluation for Physical AI. In summer 2024, I interned with the **Neuro-Symbolic Computing and Intelligence group at SRI International**, researching uncertainty quantification for multimodal LLMs through an ARPA-H-funded project.
 
 My research focuses on building **reliable multimodal AI models and agents** that learn at test time, ground their reasoning in evidence, improve from their own experience, and remain safe as tasks and environments change. This work has appeared at **ACL**, **AAAI ICWSM**, **IEEE BigData** and **ACM TIST**.
 
-- **Grounded Multimodal Reasoning:** Combining structured knowledge, visual grounding, and knowledge distillation to improve contextual understanding in vision-language models ([ACL Findings '25](https://arxiv.org/abs/2411.12174), [IEEE BigData '24](https://arxiv.org/abs/2402.03607)).
-- **Agent Safety:** Investigating vulnerabilities through multi-turn red-teaming, adversarial interactions, and theory-guided behavioral evaluation ([AAAI ICWSM '27, accepted](https://arxiv.org/abs/2510.14207), [ACM TIST '26](https://arxiv.org/abs/2501.09039)).
-- **Uncertainty and Interpretability:** Calibrating multimodal confidence using visual evidence ([EMNLP GroundLM Workshop '26](https://arxiv.org/abs/2505.03788)) and combining conformal prediction with representation probing for early failure detection in agents ([ICML Workshop '26](https://arxiv.org/abs/2604.19775)).
-- **Self-Improving Agents:** Learning from failures through preference optimization and co-evolving agents ([Preprint](https://arxiv.org/abs/2511.22254)).
+{% include research_themes.liquid %}
 
 I am also exploring **world-action models for Physical AI**, **multi-agent simulation and alignment with human behavior**, and **enterprise agents that help users discover, access, and reason over organizational data**.
 
@@ -62,6 +74,10 @@ I am also exploring **world-action models for Physical AI**, **multi-agent simul
 ## [news]({{ '/news/' | relative_url }})
 
 {% include news.liquid limit=true %}
+
+## [gallery]({{ '/gallery/' | relative_url }})
+
+{% include photo_strip.liquid %}
 
 I earned my Bachelor's degree in Electronics and Communication Engineering from [Veer Surendra Sai University of Technology](https://www.vssut.ac.in/) in 2020. Before starting my Ph.D., I was a Data Scientist in **Rakuten's Data Science Consulting team**, working on business impact estimation, customer acquisition, and funnel analysis across the Rakuten group. I collaborated with an international team and developed interpretable churn prediction models to inform customer retention strategies. I also held research internships at **Bosch Research** and **NVIDIA Research**.
 

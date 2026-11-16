@@ -1,0 +1,48 @@
+# Research themes. One list drives three things:
+#   - the bulleted list on the homepage (_includes/research_themes.liquid)
+#   - the topic chips on the publications page (_includes/topic_filters.liquid)
+#   - /publications/?topic=<key> links, e.g. from the hero questions
+# `papers` are BibTeX keys from _bibliography/papers.bib. `image` is a file in
+# assets/img/publication_preview/. Summaries are the author's own wording.
+
+- key: grounding
+  title: Grounded Multimodal Reasoning
+  image: kiddin.png
+  summary: Combining structured knowledge, visual grounding, and knowledge distillation to improve contextual understanding in vision-language models.
+  venues:
+    - label: ACL Findings ’25
+      url: https://arxiv.org/abs/2411.12174
+    - label: IEEE BigData ’24
+      url: https://arxiv.org/abs/2402.03607
+  papers: [garg2025kiddin, padhi2024congruence]
+
+- key: safety
+  title: Agent Safety in the Wild
+  image: echoes.png
+  summary: Investigating vulnerabilities through multi-turn red-teaming, adversarial interactions, and theory-guided behavioral evaluation.
+  venues:
+    - label: AAAI ICWSM ’27, accepted
+      url: https://arxiv.org/abs/2510.14207
+    - label: ACM TIST ’26
+      url: https://arxiv.org/abs/2501.09039
+  papers: [padhi2027echoes, erol2026devils]
+
+- key: uncertainty
+  title: Uncertainty and Interpretability
+  image: conformal.png
+  summary: Calibrating multimodal confidence using visual evidence, and combining conformal prediction with representation probing for early failure detection in agents.
+  venues:
+    - label: EMNLP GroundLM Workshop ’26
+      url: https://arxiv.org/abs/2505.03788
+    - label: ICML Workshop ’26
+      url: https://arxiv.org/abs/2604.19775
+  papers: [padhi2026seeing, padhi2026actions]
+
+- key: self-improving
+  title: Recursive Self-Improvement
+  image: coevolving.png
+  summary: Learning from failures through preference optimization and co-evolving agents.
+  venues:
+    - label: Preprint
+      url: https://arxiv.org/abs/2511.22254
+  papers: [jung2025coevolving]

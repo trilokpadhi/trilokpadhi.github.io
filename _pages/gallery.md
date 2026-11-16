@@ -7,25 +7,18 @@ nav: true
 nav_order: 5
 ---
 
-<!--
-Add a photo: drop it in assets/img/gallery/ and copy a gallery-item block under
-its year. Newest year first, and newest photo first within a year.
--->
+<!-- Photos come from _data/gallery.yml: add an entry there (newest first). The homepage strip shows the first three. -->
+
+{% assign years = site.data.gallery | group_by: "year" %}
 
 <div class="gallery">
-  <h2 class="gallery-year">2026</h2>
-
-  <div class="gallery-item">
-    {% include figure.liquid path="assets/img/gallery/usc-viterbi-group.jpg" class="img-fluid" alt="SWAN AI Research Group and collaborators at ICWSM 2026, USC Viterbi" caption="SWAN AI Research Group and collaborators at ICWSM 2026, USC Viterbi, Los Angeles, May 2026." zoomable=true loading="lazy" %}
-  </div>
-
-  <h2 class="gallery-year">2025</h2>
-
-  <div class="gallery-item">
-    {% include figure.liquid path="assets/img/gallery/acl-2025-chris-manning.jpg" class="img-fluid" alt="Trilok Padhi with Christopher Manning at ACL 2025 in Vienna" caption="With Christopher Manning at ACL 2025, Vienna." zoomable=true loading="lazy" %}
-  </div>
-
-  <div class="gallery-item">
-    {% include figure.liquid path="assets/img/gallery/siemens-2025.png" class="img-fluid" alt="Siemens Data and AI Research team in Seattle, summer 2025" caption="Siemens' Data &amp; AI Research team, Seattle, summer 2025." zoomable=true loading="lazy" %}
-  </div>
+  {% for y in years %}
+    <h2 class="gallery-year">{{ y.name }}</h2>
+    {% for p in y.items %}
+      {% assign photo_path = 'assets/img/gallery/' | append: p.file %}
+      <div class="gallery-item">
+        {% include figure.liquid path=photo_path class="img-fluid" alt=p.alt caption=p.caption zoomable=true loading="lazy" %}
+      </div>
+    {% endfor %}
+  {% endfor %}
 </div>

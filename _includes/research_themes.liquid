@@ -1,0 +1,27 @@
+{% comment %}
+  Research themes as a bulleted editorial list. Each row links to the
+  publications page filtered to that theme (a stretched link on the title);
+  the venue links sit above it and stay separately clickable. On hover the
+  theme's paper figure fades in on the right (desktop only).
+  Data: _data/themes.yml.
+{% endcomment %}
+{% assign pubs = '/publications/' | relative_url %}
+
+<ol class="theme-list">
+  {% for t in site.data.themes %}
+    <li class="theme-row">
+      <span class="theme-dot" aria-hidden="true"></span>
+      <div class="theme-row-body">
+        <h3 class="theme-row-title"><a class="theme-row-link" href="{{ pubs }}?topic={{ t.key }}">{{ t.title }}</a></h3>
+        <p class="theme-row-summary">{{ t.summary }}</p>
+        <p class="theme-venues">
+          {% for v in t.venues %}<a href="{{ v.url }}">{{ v.label }}</a>{% unless forloop.last %} · {% endunless %}{% endfor %}
+        </p>
+      </div>
+      <div class="theme-row-side" aria-hidden="true">
+        <img class="theme-row-fig" src="{{ '/assets/img/publication_preview/' | append: t.image | relative_url }}" alt="" loading="lazy">
+        <span class="theme-row-arrow">→</span>
+      </div>
+    </li>
+  {% endfor %}
+</ol>

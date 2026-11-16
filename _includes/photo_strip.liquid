@@ -1,0 +1,13 @@
+{% comment %}
+  The three newest gallery photos as a row of thumbnails, each linking to the
+  gallery page. Data: _data/gallery.yml.
+{% endcomment %}
+
+<div class="photo-strip">
+  {% for p in site.data.gallery limit: 3 %}
+    {% assign photo_path = 'assets/img/gallery/' | append: p.file %}
+    <a class="photo-strip-item" href="{{ '/gallery/' | relative_url }}" title="{{ p.caption | escape }}">
+      {% include figure.liquid path=photo_path class="photo-strip-img" alt=p.alt sizes="(min-width: 768px) 260px, 33vw" loading="lazy" %}
+    </a>
+  {% endfor %}
+</div>

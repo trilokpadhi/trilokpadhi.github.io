@@ -1,0 +1,14 @@
+{% comment %}
+  One-click topic filters for the publications list. Data: _data/themes.yml.
+  Reads and writes ?topic=<key> so filtered views can be linked to.
+{% endcomment %}
+
+<div class="topic-filters" role="group" aria-label="Filter publications by research topic">
+  <button type="button" class="topic-chip is-active" data-topic="" aria-pressed="true">All</button>
+  {% for t in site.data.themes %}
+    <button type="button" class="topic-chip" data-topic="{{ t.key }}" data-papers="{{ t.papers | join: ' ' }}" aria-pressed="false">
+      {{ t.title }}
+    </button>
+  {% endfor %}
+</div>
+<script defer src="{{ '/assets/js/topic-filter.js' | relative_url | bust_file_cache }}"></script>

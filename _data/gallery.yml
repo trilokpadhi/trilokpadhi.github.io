@@ -1,0 +1,17 @@
+# Photos for /gallery/ and the homepage photo strip (which shows the first three).
+# Newest first. Files live in assets/img/gallery/.
+
+- year: 2026
+  file: usc-viterbi-group.jpg
+  alt: SWAN AI Research Group and collaborators at ICWSM 2026, USC Viterbi
+  caption: SWAN AI Research Group and collaborators at ICWSM 2026, USC Viterbi, Los Angeles, May 2026.
+
+- year: 2025
+  file: acl-2025-chris-manning.jpg
+  alt: Trilok Padhi with Christopher Manning at ACL 2025 in Vienna
+  caption: With Christopher Manning at ACL 2025, Vienna.
+
+- year: 2025
+  file: siemens-2025.png
+  alt: Siemens Data and AI Research team in Seattle, summer 2025
+  caption: Siemens’ Data & AI Research team, Seattle, summer 2025.

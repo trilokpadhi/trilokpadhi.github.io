@@ -903,42 +903,23 @@ body::before {
   }
 }
 
-// Rotating research questions. Every question is rendered invisibly in the same
-// grid cell as the live one, so the headline is always as tall as the longest
-// question at the current width and nothing below it jumps while one types out.
-// The caret goes back inline here: the absolute caret above anchors to the
-// end of the first line once a question wraps, and there is no trailing full
-// stop to orphan, since the "?" is part of the typed text.
-.hero-questions {
-  font-size: clamp(1.45rem, 2.5vw, 2rem);
-  line-height: 1.2;
-}
-
+// Rotating phrase. The headline is only as tall as the phrase currently showing,
+// so the link sits right under it. When a phrase needs another line, JS sets the
+// wrapper's height and it eases to the new size instead of jumping. The phrase
+// never wraps internally, which keeps it a single box so the absolutely
+// positioned caret above lands at its end.
 .rotate-stack {
-  display: grid;
+  display: block;
+  overflow: hidden;
+  transition: height 0.35s ease;
 }
 
-.rotate-stack > .rotate-sizer,
-.rotate-stack > .rotate {
-  grid-area: 1 / 1;
+.rotate-live {
+  display: block;
 }
 
-.rotate-sizer {
-  visibility: hidden;
-}
-
-.hero-questions .rotate {
-  position: static;
-  font-style: normal;
-  color: var(--global-text-color);
-}
-
-.hero-questions .rotate::after {
-  position: static;
-  display: inline-block;
-  vertical-align: -0.08em;
-  margin-left: 3px;
-  background-color: var(--global-theme-color);
+.rotate-word {
+  white-space: nowrap;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1183,4 +1164,372 @@ html {
   figcaption {
     margin-top: 0.6rem;
   }
+}
+
+// -----------------------------------------------------------------------------
+// Hero question link
+// -----------------------------------------------------------------------------
+// Sits under the rotating question and fades in once it has typed out. The line
+// keeps its height when empty, so the bio below never moves.
+
+.hero-link-line {
+  min-height: 1.6em;
+  margin: -0.9rem 0 1.6rem;
+  font-size: 0.95rem;
+}
+
+.hero-link {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+  font-style: italic;
+
+  &::after {
+    content: "→";
+    display: inline-block;
+    margin-left: 0.3em;
+    transition: transform 0.2s ease;
+  }
+
+  &.is-shown {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  &:hover::after {
+    transform: translateX(3px);
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Homepage photo strip
+// -----------------------------------------------------------------------------
+
+.photo-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 1rem 0 2.5rem;
+}
+
+.photo-strip-item {
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 6px;
+
+  figure,
+  picture {
+    margin: 0;
+    height: 100%;
+    display: block;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 25%;
+    transition:
+      transform 0.45s ease,
+      filter 0.45s ease;
+    filter: saturate(0.9);
+  }
+
+  &:hover img,
+  &:focus-visible img {
+    transform: scale(1.06);
+    filter: saturate(1.05);
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Publication topic chips
+// -----------------------------------------------------------------------------
+
+.topic-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.topic-chip {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+  padding: 0.35rem 0.85rem;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--global-text-color);
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+
+  &:hover {
+    border-color: var(--global-theme-color);
+    color: var(--global-theme-color);
+  }
+
+  &.is-active {
+    background: var(--global-theme-color);
+    border-color: var(--global-theme-color);
+    color: #fff;
+  }
+}
+
+.topic-hidden {
+  display: none !important;
+}
+
+// -----------------------------------------------------------------------------
+// Scroll reveal (classes added by assets/js/reveal.js)
+// -----------------------------------------------------------------------------
+
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+
+  &.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Research themes: bulleted list (_includes/research_themes.liquid)
+// -----------------------------------------------------------------------------
+
+.post .theme-venues {
+  font-size: 0.85rem;
+  margin: 0;
+
+  a {
+    position: relative;
+    z-index: 2;
+    white-space: nowrap;
+  }
+}
+
+.theme-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.4rem 0 1.8rem;
+  border-top: 1px solid var(--global-divider-color);
+}
+
+.post .theme-list > li.theme-row {
+  margin: 0;
+}
+
+.theme-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.25rem minmax(0, 1fr) 150px;
+  gap: 0 1rem;
+  padding: 1.1rem 0.5rem 1.1rem 0;
+  border-bottom: 1px solid var(--global-divider-color);
+  transition: background-color 0.25s ease;
+
+  &:hover,
+  &:focus-within {
+    background-color: rgba(192, 68, 42, 0.04);
+  }
+}
+
+.theme-dot {
+  // Same accent bullet as the research interests list, centred on the title's
+  // first line.
+  width: 7px;
+  height: 7px;
+  margin-top: 0.62rem;
+  border-radius: 50%;
+  background-color: var(--global-theme-color);
+  justify-self: center;
+  transition: transform 0.25s ease;
+}
+
+.theme-row:hover .theme-dot,
+.theme-row:focus-within .theme-dot {
+  transform: scale(1.35);
+}
+
+.post .theme-row-title {
+  font-family: var(--serif);
+  font-size: 1.12rem;
+  font-weight: 600;
+  margin: 0 0 0.3rem;
+}
+
+.theme-row-link {
+  color: var(--global-text-color) !important;
+  transition: color 0.2s ease;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+}
+
+.theme-row:hover .theme-row-link {
+  color: var(--global-theme-color) !important;
+}
+
+.post .theme-row-summary {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0 0 0.35rem;
+}
+
+.theme-row-side {
+  position: relative;
+  align-self: center;
+  height: 90px;
+}
+
+.theme-row-fig {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 4px;
+  background: #fff;
+  opacity: 0;
+  transform: translateX(10px) scale(0.97);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.theme-row-arrow {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.3rem;
+  color: var(--global-text-color-light);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.theme-row:hover,
+.theme-row:focus-within {
+  .theme-row-fig {
+    opacity: 1;
+    transform: none;
+  }
+
+  .theme-row-arrow {
+    opacity: 0;
+    transform: translate(8px, -50%);
+  }
+}
+
+@media (max-width: 767.98px) {
+  .theme-row {
+    grid-template-columns: 1.25rem minmax(0, 1fr) 1.5rem;
+  }
+
+  .theme-row-fig {
+    display: none;
+  }
+
+  .theme-row-arrow {
+    right: 0;
+  }
+}
+
+// The main column gives every paragraph a 1.15rem bottom margin through
+// `.post .about-main > .clearfix p`; match its weight to keep the rows tight.
+.post .about-main .theme-row-body p.theme-row-summary {
+  margin-bottom: 0.35rem;
+}
+
+.post .about-main .theme-row-body p.theme-venues {
+  margin-bottom: 0;
+}
+
+// =============================================================================
+// Vertical rhythm
+// =============================================================================
+// One tighter, consistent scale for the homepage, set last so it wins over the
+// piecemeal values above:
+//   - 1rem between paragraphs
+//   - 0.85rem from a section heading to its content
+//   - 2.25rem between sections
+// Selectors match (or beat) the weight of the rules they replace; in particular
+// `.post .about-main > .clearfix p` is 0,3,1.
+
+.post .about-main > .clearfix p {
+  margin-bottom: 1rem;
+}
+
+.post .about-main > .clearfix ul {
+  margin-bottom: 1rem;
+}
+
+.post .about-main > h2,
+.post .about-main > .clearfix > h2 {
+  margin-top: 2.25rem;
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.35rem;
+}
+
+// Hero: the link tucks right under the headline.
+.post .hero-headline {
+  margin-bottom: 0.35rem;
+}
+
+.hero-link-line {
+  margin: 0 0 1.25rem;
+}
+
+// Research themes
+.theme-list {
+  margin: 1.25rem 0 1.25rem;
+}
+
+.theme-row {
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+}
+
+.post .about-main .research-areas {
+  margin-bottom: 0.5rem;
+}
+
+// Collaborator strip, news, gallery
+.collab {
+  margin: 1.75rem 0 0.5rem;
+  padding-top: 1rem;
+}
+
+.news {
+  margin-bottom: 1.75rem;
+}
+
+.photo-strip {
+  margin: 0.25rem 0 1.75rem;
+}
+
+// Education and experience rows
+.affiliation {
+  padding: 0.7rem 0;
+}
+
+// Selected publications
+.post .about-main ol.bibliography li {
+  margin-bottom: 1.5rem;
 }
