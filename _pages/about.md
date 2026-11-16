@@ -16,10 +16,10 @@ hero_phrases:
   - text: interpretable in their decisions
     link: /publications/?topic=uncertainty
     link_text: See the uncertainty and interpretability papers
-  - text: recursively self-improving
+  - text: recursively self-improve
     link: /publications/?topic=self-improving
     link_text: See the self-improvement papers
-  - text: knowledge grounded in evidence
+  - text: grounded in knowledge graphs and structured resources
     link: /publications/?topic=grounding
     link_text: See the grounded reasoning papers
 collaborators: true
@@ -52,14 +52,14 @@ latest_posts:
 <h1 class="hero-headline">
   <span class="sr-only">{{ page.hero_lead }} {{ hero_texts | join: ", " }}.</span>
   <span class="rotate-stack" aria-hidden="true">
-    <span class="rotate-live">{{ page.hero_lead }} <em class="rotate rotate-word" data-words="{{ hero_texts | join: '|' }}" data-links="{{ hero_p | map: 'link' | join: '|' }}" data-link-texts="{{ hero_p | map: 'link_text' | join: '|' | escape }}">{{ hero_first.text }}</em>.</span>
+    <span class="rotate-live">{{ page.hero_lead }} <em class="rotate" data-words="{{ hero_texts | join: '|' }}" data-links="{{ hero_p | map: 'link' | join: '|' }}" data-link-texts="{{ hero_p | map: 'link_text' | join: '|' | escape }}">{{ hero_first.text }}</em><span class="rotate-end"><span class="rotate-caret"></span>.</span></span>
   </span>
 </h1>
 <p class="hero-link-line"><a class="hero-link{% if hero_first.link %} is-shown{% endif %}" href="{{ hero_first.link | default: '#' }}">{{ hero_first.link_text }}</a></p>
 
-I am a fifth-year Ph.D. candidate in Computer Science at [Georgia State University](https://www.gsu.edu/), USA, advised by [Prof. Ugur Kursuncu](https://www.ugurkursuncu.com/) in the [SWAN AI Research Group](https://www.ugurkursuncu.com/SWAN-AI/). During my Ph.D., I spent the summers of 2025 and 2026 as an Applied Scientist Intern on **Siemens' Data & AI Research team** in Seattle, working on multimodal industrial foundation models and synthetic data generation and evaluation for Physical AI. In summer 2024, I interned with the **Neuro-Symbolic Computing and Intelligence group at SRI International**, researching uncertainty quantification for multimodal LLMs through an ARPA-H-funded project.
+I am a fifth-year Ph.D. candidate in Computer Science at [Georgia State University](https://www.gsu.edu/), USA, advised by [Prof. Ugur Kursuncu](https://www.ugurkursuncu.com/) in the [SWAN AI Research Group](https://www.ugurkursuncu.com/SWAN-AI/). During my Ph.D., I spent the summers of 2025 and 2026 as an Applied Scientist Intern on **Siemens' Data & AI Research team** in Seattle, working on Physical AI initiatives, more specifically the pretraining and evaluation of multimodal industrial foundation models (summer 2025) and designing an agent harness for high-quality, diverse synthetic data curation for post-training (summer 2026). In summer 2024, I interned with the **Neuro-Symbolic Computing and Intelligence group at SRI International**, researching uncertainty quantification for multimodal LLMs through an ARPA-H-funded project.
 
-My research focuses on building **reliable multimodal AI models and agents** that learn at test time, ground their reasoning in evidence, improve from their own experience, and remain safe as tasks and environments change. This work has appeared at **ACL**, **AAAI ICWSM**, **IEEE BigData** and **ACM TIST**.
+My research focuses on building **reliable multimodal AI models and agents** that learn at test time, ground their reasoning in evidence, recursively self-learn, and remain safe in unseen environments. This work has appeared at **ACL**, **AAAI ICWSM**, **IEEE BigData** and **ACM TIST**.
 
 {% include research_themes.liquid %}
 

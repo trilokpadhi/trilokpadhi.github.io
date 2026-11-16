@@ -867,47 +867,37 @@ body::before {
   display: none; // folded into the headline
 }
 
-// Rotating word in the hero headline. A blinking caret sits after it so the
-// line reads as being typed rather than as a layout glitch; min-width is set
-// in JS from the longest word so the headline never reflows mid-animation.
-.hero-headline .rotate {
-  position: relative;
+// Rotating phrase in the hero headline, followed by a blinking caret.
+//
+// The phrase wraps like normal text, so a long one never overflows the column.
+// The caret is a plain inline span (not inline-block) sitting in a nowrap group
+// with the full stop, directly against the phrase with no space between. Plain
+// inlines create no line-break opportunity, so the caret and "." always stay on
+// the phrase's last line: neither can be orphaned onto a line of its own, which
+// is what an inline-block caret used to do at some widths.
+.rotate-end {
+  white-space: nowrap;
 }
 
-// Out of flow on purpose. As an inline-block the caret sat between the word and
-// the sentence's full stop, and an atomic inline creates a line-break
-// opportunity after it, so at some widths the "." was pushed onto a line of its
-// own. Which word triggers it depends on the viewport: at 412px it was
-// "interpretable", so no single word is at fault and shortening the copy would
-// only move the problem. Absolute positioning takes the caret out of the line
-// entirely, leaving nothing to break at.
-.hero-headline .rotate::after {
-  content: "";
-  position: absolute;
-  left: 100%;
-  bottom: 0.1em;
-  width: 2px;
-  height: 0.85em;
+.rotate-caret {
+  border-left: 2px solid var(--global-theme-color);
   margin-left: 2px;
-  background-color: currentColor;
   animation: hero-caret 1s step-end infinite;
 }
 
 @keyframes hero-caret {
   0%,
   100% {
-    opacity: 1;
+    border-left-color: var(--global-theme-color);
   }
   50% {
-    opacity: 0;
+    border-left-color: transparent;
   }
 }
 
-// Rotating phrase. The headline is only as tall as the phrase currently showing,
-// so the link sits right under it. When a phrase needs another line, JS sets the
-// wrapper's height and it eases to the new size instead of jumping. The phrase
-// never wraps internally, which keeps it a single box so the absolutely
-// positioned caret above lands at its end.
+// The headline is only as tall as the phrase currently showing, so the link sits
+// right under it. When a phrase gains or loses a line, JS pins the wrapper's
+// height and it eases to the new size instead of jumping.
 .rotate-stack {
   display: block;
   overflow: hidden;
@@ -918,14 +908,10 @@ body::before {
   display: block;
 }
 
-.rotate-word {
-  white-space: nowrap;
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .hero-headline .rotate::after {
+  .rotate-caret {
     animation: none;
-    opacity: 0;
+    border-left-color: transparent;
   }
 }
 

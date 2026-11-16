@@ -17,7 +17,7 @@
   papers: [garg2025kiddin, padhi2024congruence]
 
 - key: safety
-  title: Agent Safety in the Wild
+  title: Agent Red-Teaming & Safety
   image: echoes.png
   summary: Investigating vulnerabilities through multi-turn red-teaming, adversarial interactions, and theory-guided behavioral evaluation.
   venues:
